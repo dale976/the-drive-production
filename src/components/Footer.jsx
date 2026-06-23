@@ -28,7 +28,7 @@ export default function Footer() {
           rel="noreferrer"
           className="text-brandTeal text-xs font-black tracking-[0.4em] hover:text-white transition duration-300 uppercase block"
         >
-          THEDRIVETOURINGCOMPANY.COM
+          WWW.THEDRIVETOURINGCOMPANY.COM
         </a>
       </div>
     </footer>

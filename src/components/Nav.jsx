@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import LogoOgColor from '../assets/Logo_OG_Colour.png';
 
 export default function Nav({ activePage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,19 +11,12 @@ export default function Nav({ activePage }) {
   ];
 
   return (
-    <nav className="border-b border-gray-900/80 backdrop-blur-md bg-brandDark/90 sticky top-0 z-50 h-24 flex-shrink-0">
+    <nav className="border-b border-gray-900/80 backdrop-blur-md bg-brandDark/90 sticky top-0 z-50 h-24 shrink-0">
       <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
 
         {/* Logo */}
         <a href="/" className="flex flex-col items-center cursor-pointer group no-underline">
-          <span className="text-[10px] tracking-[0.5em] text-gray-400 font-bold transition group-hover:text-brandTeal">THE</span>
-          <span
-            style={{ fontFamily: 'RoadRage, sans-serif' }}
-            className="text-3xl font-black italic tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-brandTeal via-cyan-400 to-emerald-400 -mt-1.5 transform transition group-hover:scale-105 pl-4 pr-2"
-          >
-            DRIVE
-          </span>
-          <span className="text-[8px] tracking-[0.18em] text-gray-400 font-bold -mt-1">TOURING COMPANY</span>
+            <img src={LogoOgColor} alt="The Drive Logo" className="w-36 h-auto"/>
         </a>
 
         {/* Desktop nav links */}
