@@ -1,9 +1,6 @@
 import { Car, Map, Shield, Calendar, ChevronRight } from 'lucide-react';
-import heroImage from '../assets/hero_image.jpg';
-import about2 from '../assets/about_2.jpeg'
-import about3 from '../assets/about_3.jpeg'
-import hero2 from '../assets/hero_2.jpeg';
 import wet911 from '../assets/911_wet.jpeg'
+import tripImg from '../assets/trip.jpeg'
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
 
@@ -177,7 +174,7 @@ export default function LandingPage({ activePage = 'home' }) {
             >
               <div
                 className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
-                style={{ backgroundImage: `linear-gradient(to top, rgba(11,15,18,1) 10%, rgba(11,15,18,0.4) 50%, rgba(11,15,18,0.1) 100%), url('${about3}')` }}
+                style={{ backgroundImage: `linear-gradient(to top, rgba(11,15,18,1) 10%, rgba(11,15,18,0.4) 50%, rgba(11,15,18,0.1) 100%), url('${tripImg}')` }}
               />
               <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
                 <div className="flex justify-between items-start">

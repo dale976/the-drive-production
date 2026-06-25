@@ -1,8 +1,5 @@
 import {Compass, Users, Hotel} from 'lucide-react';
 import lordBusinessImage from '../assets/Lord_Business.jpg';
-import aboutCarImage from '../assets/about_car.jpg';
-import about2 from '../assets/about_2.jpeg'
-import about3 from '../assets/about_3.jpeg'
 import rear911 from '../assets/rear_911.jpeg'
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
