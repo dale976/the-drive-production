@@ -6,8 +6,9 @@ export default function Nav({ activePage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const links = [
-    { label: 'HOME', href: '/', key: 'home' },
-    { label: 'ABOUT', href: '/about', key: 'about' },
+    // { label: 'HOME', href: '/', key: 'home' },
+    // { label: 'ABOUT', href: '/about', key: 'about' },
+    // { label: 'TOURS', href: '/tours', key: 'tours' },
   ];
 
   return (
@@ -34,18 +35,18 @@ export default function Nav({ activePage }) {
               {label}
             </a>
           ))}
-          <a href="/events" className="text-gray-600 opacity-40 cursor-not-allowed tracking-[0.2em]">EVENTS</a>
+          {/*<a href="/events" className="text-gray-600 opacity-40 cursor-not-allowed tracking-[0.2em]">EVENTS</a>*/}
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
-          <a
-            href="/events"
-            className="inline-block bg-brandTeal text-brandDark font-bold px-7 py-3 tracking-[0.15em] text-xs uppercase opacity-40 cursor-not-allowed shadow-[0_0_20px_rgba(0,168,150,0.15)] hover:shadow-[0_0_40px_rgba(0,168,150,0.5)] transition-shadow duration-300"
-          >
-            Book An Experience
-          </a>
-        </div>
+        {/*<div className="hidden md:block">*/}
+        {/*  <a*/}
+        {/*    href="/events"*/}
+        {/*    className="inline-block bg-brandTeal text-brandDark font-bold px-7 py-3 tracking-[0.15em] text-xs uppercase opacity-40 cursor-not-allowed shadow-[0_0_20px_rgba(0,168,150,0.15)] hover:shadow-[0_0_40px_rgba(0,168,150,0.5)] transition-shadow duration-300"*/}
+        {/*  >*/}
+        {/*    Book An Experience*/}
+        {/*  </a>*/}
+        {/*</div>*/}
 
         {/* Mobile toggle */}
         <button
