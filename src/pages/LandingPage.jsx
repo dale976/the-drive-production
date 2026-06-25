@@ -1,5 +1,5 @@
 import { Car, Map, Shield, Calendar, ChevronRight } from 'lucide-react';
-import wet911 from '../assets/911_wet.jpeg'
+import wet911 from '../assets/911_wet.jpg'
 import tripImg from '../assets/trip.jpeg'
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
