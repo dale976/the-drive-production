@@ -6,9 +6,10 @@ export default function Nav({ activePage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const links = [
-    // { label: 'HOME', href: '/', key: 'home' },
-    // { label: 'ABOUT', href: '/about', key: 'about' },
-    // { label: 'TOURS', href: '/tours', key: 'tours' },
+    { label: 'HOME', href: '/', key: 'home' },
+    { label: 'ABOUT', href: '/about', key: 'about' },
+    { label: 'TOURS', href: '/tours', key: 'tours' },
+    { label: 'FLEET', href: '/fleet', key: 'fleet' },
   ];
 
   return (
@@ -35,18 +36,7 @@ export default function Nav({ activePage }) {
               {label}
             </a>
           ))}
-          {/*<a href="/events" className="text-gray-600 opacity-40 cursor-not-allowed tracking-[0.2em]">EVENTS</a>*/}
         </div>
-
-        {/* Desktop CTA */}
-        {/*<div className="hidden md:block">*/}
-        {/*  <a*/}
-        {/*    href="/events"*/}
-        {/*    className="inline-block bg-brandTeal text-brandDark font-bold px-7 py-3 tracking-[0.15em] text-xs uppercase opacity-40 cursor-not-allowed shadow-[0_0_20px_rgba(0,168,150,0.15)] hover:shadow-[0_0_40px_rgba(0,168,150,0.5)] transition-shadow duration-300"*/}
-        {/*  >*/}
-        {/*    Book An Experience*/}
-        {/*  </a>*/}
-        {/*</div>*/}
 
         {/* Mobile toggle */}
         <button
@@ -73,14 +63,6 @@ export default function Nav({ activePage }) {
               {label}
             </a>
           ))}
-          <a href="/events" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-semibold tracking-widest py-2 text-gray-600 cursor-not-allowed opacity-40">EVENTS</a>
-          <a
-            href="/events"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block w-full bg-brandTeal text-brandDark font-bold py-3 tracking-widest text-xs mt-2 text-center opacity-40 cursor-not-allowed"
-          >
-            BOOK AN EXPERIENCE
-          </a>
         </div>
       )}
     </nav>

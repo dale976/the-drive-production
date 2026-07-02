@@ -23,19 +23,8 @@ export default function Footer() {
       </div>
 
       <div className="text-[11px] text-gray-500 tracking-[0.3em] uppercase space-y-2">
-        <p>EXCLUSIVE SUPERCAR TOURS | EVENTS | EXPERIENCES</p>
+        <p>EXCLUSIVE SUPERCAR TOURS | EXPERIENCES</p>
         <p className="text-gray-600">© {new Date().getFullYear()} THE DRIVE TOURING COMPANY. ALL RIGHTS RESERVED.</p>
-      </div>
-
-      <div className="pt-4">
-        <a
-          href="https://thedrivetouringcompany.com"
-          target="_blank"
-          rel="noreferrer"
-          className="text-brandTeal text-xs font-black tracking-[0.4em] hover:text-white transition duration-300 uppercase block"
-        >
-          WWW.THEDRIVETOURINGCOMPANY.COM
-        </a>
       </div>
     </footer>
   );
