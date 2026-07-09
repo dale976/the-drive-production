@@ -1,5 +1,5 @@
 import { Car, Map, Users } from 'lucide-react';
-import wet911 from '../assets/911_wet.jpg';
+import wet911 from '../assets/exige_edit.jpg';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
 
@@ -56,7 +56,7 @@ export default function LandingPage({ activePage = 'home' }) {
 
                     <p className="text-gray-300 tracking-[0.25em] text-xs md:text-sm max-w-xl mx-auto uppercase font-medium leading-loose drop-shadow-md">
                         Epic Roads. Unforgettable Moments. <br />
-                        <span className="text-white font-bold">Live to Drive. Drive to Live.</span>
+                        <span className="text-white font-bold">We live for The Drive.</span>
                     </p>
 
                     <div className="pt-4">

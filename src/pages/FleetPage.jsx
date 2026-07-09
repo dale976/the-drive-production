@@ -1,9 +1,9 @@
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
-import porscheImg from '../assets/porsche_gt3rs.jpg';
-import ferrariImg from '../assets/ferrari_f8.jpg';
-import mclarenImg from '../assets/mclaren_artura.jpg';
-import fleetHeroImg from '../assets/fleet_hero.jpg';
+import porscheImg from '../assets/gt3_rs_hotel.jpg';
+import lotusImg from '../assets/exige_dark.jpeg';
+import m3TouringImg from '../assets/m3_touring_coming_soon.jpg';
+import fleetHeroImg from '../assets/cars_bridge_hq.jpg';
 
 export default function FleetPage({ activePage = 'fleet' }) {
     const carFleet = [
@@ -19,14 +19,14 @@ export default function FleetPage({ activePage = 'fleet' }) {
             name: 'LOTUS EXIGE 410 SPORT',
             tagline: 'LEAD CAR — LIGHTWEIGHT DRIVING PURITY',
             specs: { power: '410 HP', zeroToSixty: '3.3s', topSpeed: '280 KM/H' },
-            image: ferrariImg,
+            image: lotusImg,
         },
         {
             id: 3,
             name: 'BMW M3 TOURING',
             tagline: 'SUPPORT CAR — PERFORMANCE & LOGISTICS',
             specs: { power: '503 HP', zeroToSixty: '3.6s', topSpeed: '280 KM/H' },
-            image: mclarenImg,
+            image: m3TouringImg,
         },
     ];
 
@@ -51,12 +51,12 @@ export default function FleetPage({ activePage = 'fleet' }) {
 
                 <div className="relative z-10 text-center max-w-5xl px-6 space-y-4">
           <span className="text-brandTeal text-xs font-extrabold tracking-[0.4em] uppercase block">
-            The Precision Fleet
+            Meet the Fleet
           </span>
                     <h1 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-none">
                         MACHINES OF <br />
                         <span className="bg-clip-text text-brandTeal italic font-black pr-4">
-              PURE EMOTION
+              THE DRIVE
             </span>
                     </h1>
                     <div className="w-16 h-[2px] bg-brandTeal mx-auto my-4 shadow-[0_0_10px_#00A896]" />

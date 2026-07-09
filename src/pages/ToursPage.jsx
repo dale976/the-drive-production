@@ -1,19 +1,19 @@
 import { Calendar, Clock, Users, Compass } from 'lucide-react';
-import toursHeroImg from '../assets/tours_hero.jpg';
-import tourAlpineImg from '../assets/tour_alpine.jpg';
+import toursHeroImg from '../assets/gt3_chateau.jpg';
+import tourAlpineImg from '../assets/fez_alpine.jpg';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
 
 export default function ToursPage({ activePage = 'tours' }) {
     const tour = {
         title: 'THE ALPINE GT 2027',
-        subtitle: 'VICTORIAN ALPS, AUSTRALIA',
-        duration: '4 DAYS / 3 NIGHTS',
-        distance: '1,250 KM',
-        groupSize: 'MAX 12 CARS',
-        price: '$4,950 AUD',
-        date: '15 - 18 JUN 2027',
-        tagline: 'HIGH-ALTITUDE HAIRPINS & BESPOKE LODGES',
+        subtitle: 'BLACK FOREST GERMANY, SWISS ALPS, BURGUNDY FRANCE',
+        duration: '5 DAYS / 4 NIGHTS',
+        distance: '1,500 MLS',
+        groupSize: 'MAX 15 CARS',
+        price: '£2495',
+        date: '8 - 12 JUL 2027',
+        tagline: 'HIGH-ALTITUDE HAIRPINS & PREMIUM VENUES',
         description: 'Conquer Australia\'s ultimate driving playground. This curated run pieces together the Great Alpine Road, Mount Buffalo, and legendary technical descents, punctuated by private vineyard dinners and luxury alpine chalet stays.',
         image: tourAlpineImg,
         highlights: ['Great Alpine Road Sweep', 'Private Vineyard Dinner', 'Helicopter Scenic Transfer']
@@ -141,8 +141,8 @@ export default function ToursPage({ activePage = 'tours' }) {
 
                         {/* CTA */}
                         <div className="pt-4 flex items-center justify-between border-t border-gray-800/60">
-                            <a href="mailto:info@thedrivetouringcompany.com?subject=Alpine GT 2027 - Tour Dossier Request" className="border-2 border-brandTeal text-brandTeal font-black px-6 py-3 tracking-[0.2em] text-[10px] bg-brandDark/40 backdrop-blur-sm hover:bg-brandTeal hover:text-brandDark transition-all duration-300 uppercase shadow-[0_0_15px_rgba(0,168,150,0.1)] hover:shadow-[0_0_30px_rgba(0,168,150,0.4)]">
-                                REQUEST TOUR DOSSIER
+                            <a href="mailto:info@thedrivetouringcompany.com?subject=Alpine GT 2027 - Tour Brochure Request" className="border-2 border-brandTeal text-brandTeal font-black px-6 py-3 tracking-[0.2em] text-[10px] bg-brandDark/40 backdrop-blur-sm hover:bg-brandTeal hover:text-brandDark transition-all duration-300 uppercase shadow-[0_0_15px_rgba(0,168,150,0.1)] hover:shadow-[0_0_30px_rgba(0,168,150,0.4)]">
+                                REQUEST TOUR BROCHURE
                             </a>
                             <span className="hidden md:flex items-center gap-1.5 text-[10px] font-black tracking-widest text-gray-600 cursor-default opacity-50">
                                 BOOKING OPENING SOON

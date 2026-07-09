@@ -44,7 +44,7 @@ export default function AboutPage({activePage = 'about'}) {
                     <span className="text-brandTeal text-xs font-extrabold tracking-[0.4em] uppercase block mb-3">Behind The Brand</span>
                     <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">
                         WHO WE <span
-                        className="italic font-black text-transparent bg-clip-text bg-gradient-to-r from-brandTeal to-cyan-400 pr-2">ARE</span>
+                        className="italic text-brandTeal pr-2">ARE</span>
                     </h1>
                     <div className="w-12 h-[2px] bg-brandTeal mx-auto mt-4"/>
                 </div>

@@ -2,7 +2,7 @@
 
 @theme {
   --color-brandDark: #0B0F12;
-  --color-brandTeal: #00A896;
+  --color-brandTeal: #00a6a6; /* from logo */
   --color-brandGray: #1A2126;
 }
 
@@ -14,7 +14,7 @@
 
 body {
   margin: 0;
-  background-color: #0B0F12;
+  background-color: var(--color-brandDark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
