@@ -1,22 +1,22 @@
 import { Calendar, Clock, Users, Compass } from 'lucide-react';
-import toursHeroImg from '../assets/tours_hero.jpg';
-import tourAlpineImg from '../assets/tour_alpine.jpg';
+import toursHeroImg from '../assets/gt3_chateau.jpg';
+import tourAlpineImg from '../assets/fez_alpine.jpg';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
 
 export default function ToursPage({ activePage = 'tours' }) {
     const tour = {
         title: 'THE ALPINE GT 2027',
-        subtitle: 'VICTORIAN ALPS, AUSTRALIA',
-        duration: '4 DAYS / 3 NIGHTS',
-        distance: '1,250 KM',
-        groupSize: 'MAX 12 CARS',
-        price: '$4,950 AUD',
-        date: '15 - 18 JUN 2027',
-        tagline: 'HIGH-ALTITUDE HAIRPINS & BESPOKE LODGES',
-        description: 'Conquer Australia\'s ultimate driving playground. This curated run pieces together the Great Alpine Road, Mount Buffalo, and legendary technical descents, punctuated by private vineyard dinners and luxury alpine chalet stays.',
+        subtitle: 'BLACK FOREST GERMANY, SWISS ALPS, BURGUNDY FRANCE',
+        duration: '5 DAYS / 4 NIGHTS',
+        distance: '1,500 MLS',
+        groupSize: 'MAX 15 CARS',
+        price: 'TBC',
+        date: '8 - 12 JUL 2027',
+        tagline: 'HIGH-ALTITUDE HAIRPINS & PREMIUM VENUES',
+        description: 'Conquer Europe\'s most celebrated driving roads. This curated experience connects the Black Forest with the legendary Swiss Alpine passes of Furka, Grimsel and Susten, before unwinding through vineyard-lined roads and luxury château stays in the heart of Burgundy.',
         image: tourAlpineImg,
-        highlights: ['Great Alpine Road Sweep', 'Private Vineyard Dinner', 'Helicopter Scenic Transfer']
+        highlights: ['Black Forest Sweep', 'The Holy Trinity Alpine Loop', 'Burgundy Château Celebration']
     };
 
     return (
@@ -108,14 +108,14 @@ export default function ToursPage({ activePage = 'tours' }) {
                                 </div>
                             </div>
                             <div className="space-y-0.5">
-                                <span className="text-[9px] text-gray-500 font-bold tracking-widest block uppercase">CONVOY SIZE</span>
+                                <span className="text-[9px] text-gray-500 font-bold tracking-widest block uppercase">TOUR SIZE</span>
                                 <div className="flex items-center gap-1.5 text-xs font-black text-gray-200">
                                     <Users className="w-3.5 h-3.5 text-brandTeal/70" strokeWidth={2} />
                                     <span>{tour.groupSize}</span>
                                 </div>
                             </div>
                             <div className="space-y-0.5">
-                                <span className="text-[9px] text-gray-500 font-bold tracking-widest block uppercase">INVESTMENT</span>
+                                <span className="text-[9px] text-gray-500 font-bold tracking-widest block uppercase">PRICE</span>
                                 <div className="flex items-center gap-1.5 text-xs font-black text-brandTeal">
                                     <span>{tour.price}</span>
                                 </div>
@@ -141,8 +141,8 @@ export default function ToursPage({ activePage = 'tours' }) {
 
                         {/* CTA */}
                         <div className="pt-4 flex items-center justify-between border-t border-gray-800/60">
-                            <a href="mailto:info@thedrivetouringcompany.com?subject=Alpine GT 2027 - Tour Dossier Request" className="border-2 border-brandTeal text-brandTeal font-black px-6 py-3 tracking-[0.2em] text-[10px] bg-brandDark/40 backdrop-blur-sm hover:bg-brandTeal hover:text-brandDark transition-all duration-300 uppercase shadow-[0_0_15px_rgba(0,168,150,0.1)] hover:shadow-[0_0_30px_rgba(0,168,150,0.4)]">
-                                REQUEST TOUR DOSSIER
+                            <a href="mailto:info@thedrivetouringcompany.com?subject=Alpine GT 2027 - Tour Brochure Request" className="border-2 border-brandTeal text-brandTeal font-black px-6 py-3 tracking-[0.2em] text-[10px] bg-brandDark/40 backdrop-blur-sm hover:bg-brandTeal hover:text-brandDark transition-all duration-300 uppercase shadow-[0_0_15px_rgba(0,168,150,0.1)] hover:shadow-[0_0_30px_rgba(0,168,150,0.4)]">
+                                REQUEST TOUR BROCHURE
                             </a>
                             <span className="hidden md:flex items-center gap-1.5 text-[10px] font-black tracking-widest text-gray-600 cursor-default opacity-50">
                                 BOOKING OPENING SOON
@@ -160,7 +160,7 @@ export default function ToursPage({ activePage = 'tours' }) {
                     <span className="text-brandTeal text-xs font-bold tracking-widest uppercase block">Stay Connected</span>
                     <h2 className="text-2xl font-black tracking-tight uppercase">MORE EXPERIENCES IN DEVELOPMENT</h2>
                     <p className="text-xs text-gray-400 leading-relaxed max-w-xl mx-auto font-medium">
-                        Additional tours across Australia and Europe are being scouted and will be announced here. Get in touch to register your interest for early access.
+                        Additional tours, events and bespoke experiences across the UK and Europe are in development and more information will be announced here soon. Register your interest here to receive early access to our future events.
                     </p>
                     <div className="pt-2">
                         <a href="mailto:info@thedrivetouringcompany.com?subject=Tour Interest Registration" className="text-[11px] text-brandTeal font-black tracking-widest border-b border-brandTeal/30 pb-1 hover:border-brandTeal transition-all">

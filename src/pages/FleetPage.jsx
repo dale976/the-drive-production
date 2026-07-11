@@ -1,9 +1,9 @@
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
-import porscheImg from '../assets/porsche_gt3rs.jpg';
-import ferrariImg from '../assets/ferrari_f8.jpg';
-import mclarenImg from '../assets/mclaren_artura.jpg';
-import fleetHeroImg from '../assets/fleet_hero.jpg';
+import porscheImg from '../assets/gt3_rs_hotel.jpg';
+import lotusImg from '../assets/exige_dark.jpeg';
+import m3TouringImg from '../assets/m3_touring_coming_soon.jpg';
+import fleetHeroImg from '../assets/cars_bridge_hq.jpg';
 
 export default function FleetPage({ activePage = 'fleet' }) {
     const carFleet = [
@@ -11,22 +11,22 @@ export default function FleetPage({ activePage = 'fleet' }) {
             id: 1,
             name: 'PORSCHE 911 GT3 RS',
             tagline: 'LEAD CAR — PRECISION & POISE',
-            specs: { power: '518 HP', zeroToSixty: '3.0s', topSpeed: '296 KM/H' },
+            specs: { power: '500 BHP', zeroToSixty: '3.0s', topSpeed: '296 KM/H' },
             image: porscheImg,
         },
         {
             id: 2,
             name: 'LOTUS EXIGE 410 SPORT',
             tagline: 'LEAD CAR — LIGHTWEIGHT DRIVING PURITY',
-            specs: { power: '410 HP', zeroToSixty: '3.3s', topSpeed: '280 KM/H' },
-            image: ferrariImg,
+            specs: { power: '410 BHP', zeroToSixty: '3.3s', topSpeed: '280 KM/H' },
+            image: lotusImg,
         },
         {
             id: 3,
             name: 'BMW M3 TOURING',
             tagline: 'SUPPORT CAR — PERFORMANCE & LOGISTICS',
-            specs: { power: '503 HP', zeroToSixty: '3.6s', topSpeed: '280 KM/H' },
-            image: mclarenImg,
+            specs: { power: '530 BHP', zeroToSixty: '3.6s', topSpeed: '280 KM/H' },
+            image: m3TouringImg,
         },
     ];
 
@@ -51,12 +51,12 @@ export default function FleetPage({ activePage = 'fleet' }) {
 
                 <div className="relative z-10 text-center max-w-5xl px-6 space-y-4">
           <span className="text-brandTeal text-xs font-extrabold tracking-[0.4em] uppercase block">
-            The Precision Fleet
+            Meet the Fleet
           </span>
                     <h1 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-none">
                         MACHINES OF <br />
                         <span className="bg-clip-text text-brandTeal italic font-black pr-4">
-              PURE EMOTION
+              THE DRIVE
             </span>
                     </h1>
                     <div className="w-16 h-[2px] bg-brandTeal mx-auto my-4 shadow-[0_0_10px_#00A896]" />
@@ -120,7 +120,7 @@ export default function FleetPage({ activePage = 'fleet' }) {
                     <span className="text-brandTeal text-xs font-bold tracking-widest uppercase block">Our Standard</span>
                     <h2 className="text-2xl md:text-3xl font-black tracking-tight uppercase">TOUR-HARDENED. ROAD-READY.</h2>
                     <p className="text-gray-400 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed font-medium">
-                        Two lead cars set the pace. A dedicated support vehicle follows the convoy. Every machine in our fleet is prepared for long-distance touring — serviced, detailed, and dialled in for the road ahead.
+                        Our lead cars are proper mountain road and tour mileage pace setters. Fast, agile and hard to miss. In addition to our epic lead cars we have our G81 LCI M3 Touring providing the ultimate backup should anyone need unforeseen assistance on tour.
                     </p>
                 </div>
             </section>

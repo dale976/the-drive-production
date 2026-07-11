@@ -7,7 +7,7 @@ export default function Nav({ activePage }) {
 
   const links = [
     { label: 'HOME', href: '/', key: 'home' },
-    { label: 'ABOUT', href: '/about', key: 'about' },
+    // { label: 'ABOUT', href: '/about', key: 'about' },
     { label: 'TOURS', href: '/tours', key: 'tours' },
     { label: 'FLEET', href: '/fleet', key: 'fleet' },
   ];
