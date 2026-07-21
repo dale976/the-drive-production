@@ -82,8 +82,8 @@ export default function FleetPage({ activePage = 'fleet' }) {
                                 </div>
 
                                 {/* Details */}
-                                <div className="p-8 space-y-6 flex-grow flex flex-col justify-between">
-                                    <div>
+                                <div className="p-8 space-y-6 flex-grow flex flex-col justify-between text-center">
+                                    <div className="md:text-left">
                                         <span className="text-[10px] text-brandTeal tracking-widest font-bold block uppercase mb-1">
                                             {car.tagline}
                                         </span>

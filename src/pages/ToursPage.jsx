@@ -12,9 +12,9 @@ export default function ToursPage({ activePage = 'tours' }) {
         distance: '1,500 MLS',
         groupSize: 'MAX 15 CARS',
         price: 'TBC',
-        date: '8 - 12 JUL 2027',
+        date: '10 - 14 JUNE 2027',
         tagline: 'HIGH-ALTITUDE HAIRPINS & PREMIUM VENUES',
-        description: 'Conquer Europe\'s most celebrated driving roads. This curated experience connects the Black Forest with the legendary Swiss Alpine passes of Furka, Grimsel and Susten, before unwinding through vineyard-lined roads and luxury château stays in the heart of Burgundy.',
+        description: 'Conquer Europe\'s most celebrated driving roads. This curated experience connects the Black Forest with the legendary Swiss Alpine passes of Furka, Grimsel and Susten, before unwinding through vineyard-lined roads and a luxury château stay in the heart of Burgundy.',
         image: tourAlpineImg,
         highlights: ['Black Forest Sweep', 'The Holy Trinity Alpine Loop', 'Burgundy Château Celebration']
     };
