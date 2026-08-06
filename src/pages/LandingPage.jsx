@@ -1,7 +1,8 @@
-import {Car, Compass, Hotel, Map, Users} from 'lucide-react';
+import {Compass, Hotel, Users} from 'lucide-react';
 import wet911 from '../assets/exige_edit.jpg';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
+import PageMeta from '../components/PageMeta.jsx';
 
 export default function LandingPage({activePage = 'home'}) {
     // const features = [
@@ -46,6 +47,11 @@ export default function LandingPage({activePage = 'home'}) {
     return (
         <div
             className="bg-brandDark text-white min-h-screen font-sans antialiased selection:bg-brandTeal selection:text-brandDark flex flex-col">
+
+            <PageMeta
+                description="Exclusive supercar touring experiences across epic roads, premium venues and unforgettable destinations."
+                path="/"
+            />
 
             <Nav activePage={activePage}/>
 

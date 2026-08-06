@@ -1,20 +1,34 @@
-import LandingPage from './pages/LandingPage.jsx';
-import AboutPage from './pages/AboutPage.jsx';
-import FleetPage from './pages/FleetPage.jsx';
-import ToursPage from './pages/ToursPage.jsx';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function getPage() {
-  const path = window.location.pathname;
-  if (path === '/about') return 'about';
-  if (path === '/fleet') return 'fleet';
-  if (path === '/tours') return 'tours';
-  return 'home';
+const LandingPage = lazy(() => import('./pages/LandingPage.jsx'));
+const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
+const FleetPage = lazy(() => import('./pages/FleetPage.jsx'));
+const ToursPage = lazy(() => import('./pages/ToursPage.jsx'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx'));
+
+function PageFallback() {
+  return (
+    <div className="min-h-screen bg-brandDark text-white flex items-center justify-center">
+      <span className="text-xs font-bold tracking-[0.3em] text-brandTeal uppercase">
+        Loading The Drive
+      </span>
+    </div>
+  );
 }
 
 export default function App() {
-  const page = getPage();
-  if (page === 'about') return <AboutPage activePage="about" />;
-  if (page === 'fleet') return <FleetPage activePage="fleet" />;
-  if (page === 'tours') return <ToursPage activePage="tours" />;
-  return <LandingPage activePage="home" />;
+  return (
+    <BrowserRouter>
+      <Suspense fallback={<PageFallback />}>
+        <Routes>
+          <Route path="/" element={<LandingPage activePage="home" />} />
+          <Route path="/about" element={<AboutPage activePage="about" />} />
+          <Route path="/tours" element={<ToursPage activePage="tours" />} />
+          <Route path="/fleet" element={<FleetPage activePage="fleet" />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  );
 }

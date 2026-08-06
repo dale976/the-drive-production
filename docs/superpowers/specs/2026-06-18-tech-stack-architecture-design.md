@@ -42,9 +42,9 @@ The Drive Touring Company is a React web application for booking and managing ex
 ### Hosting & Deployment
 | Layer | Choice |
 |---|---|
-| Frontend | Vercel |
+| Frontend | Cloudflare Workers |
 | Backend | Supabase (managed) |
-| CI/CD | Vercel GitHub integration (auto-deploy on push to `main`) |
+| CI/CD | GitHub Actions quality checks + Cloudflare deployment |
 
 ---
 

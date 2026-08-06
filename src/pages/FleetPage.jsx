@@ -4,6 +4,7 @@ import porscheImg from '../assets/gt3_rs_hotel.jpg';
 import lotusImg from '../assets/exige_dark.jpeg';
 import m3TouringImg from '../assets/m3_touring_coming_soon.jpg';
 import fleetHeroImg from '../assets/cars_bridge_hq.jpg';
+import PageMeta from '../components/PageMeta.jsx';
 
 export default function FleetPage({ activePage = 'fleet' }) {
     const carFleet = [
@@ -32,6 +33,12 @@ export default function FleetPage({ activePage = 'fleet' }) {
 
     return (
         <div className="bg-brandDark text-white min-h-screen font-sans antialiased selection:bg-brandTeal selection:text-brandDark flex flex-col">
+
+            <PageMeta
+                title="Fleet"
+                description="Meet The Drive Touring Company's Porsche 911 GT3 RS, Lotus Exige 410 Sport and BMW M3 Touring support fleet."
+                path="/fleet"
+            />
 
             <Nav activePage={activePage} />
 
