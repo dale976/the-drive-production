@@ -3,6 +3,7 @@ import toursHeroImg from '../assets/gt3_chateau.jpg';
 import tourAlpineImg from '../assets/fez_alpine.jpg';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
+import PageMeta from '../components/PageMeta.jsx';
 
 export default function ToursPage({ activePage = 'tours' }) {
     const tour = {
@@ -21,6 +22,12 @@ export default function ToursPage({ activePage = 'tours' }) {
 
     return (
         <div className="bg-brandDark text-white min-h-screen font-sans antialiased selection:bg-brandTeal selection:text-brandDark flex flex-col">
+
+            <PageMeta
+                title="Tours"
+                description="Discover The Alpine GT 2027: five days through Germany's Black Forest, the Swiss Alps and Burgundy."
+                path="/tours"
+            />
 
             <Nav activePage={activePage} />
 

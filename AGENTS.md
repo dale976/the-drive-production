@@ -22,12 +22,12 @@ Full architecture spec: `docs/superpowers/specs/2026-06-18-tech-stack-architectu
 | Styling | Tailwind CSS v4 |
 | Component library | Base UI (`@base-ui/react`) — headless, styled with Tailwind |
 | Icons | Lucide React |
-| Router | React Router v7 |
+| Router | React Router v7 (`react-router-dom`) |
 | Backend | Supabase (PostgreSQL + Auth + Edge Functions) |
 | Auth | Supabase magic link (email, no passwords) |
 | Payments | GoCardless Direct Debit — 3-installment model (deposit → 2nd → final) |
-| Hosting | Vercel (frontend) + Supabase (backend) |
-| CI/CD | Vercel GitHub integration — auto-deploys on push to `main` |
+| Hosting | Cloudflare Workers (frontend) + Supabase (future backend) |
+| CI/CD | GitHub Actions quality checks + Cloudflare deployment |
 
 ---
 
@@ -169,7 +169,7 @@ SUPABASE_SERVICE_ROLE_KEY=
 | Done | Landing page |
 | Done | About page |
 | Done | Git repo + .gitignore |
-| Pending | React Router v7 |
+| Done | React Router v7 public-site routing + 404 |
 | Pending | Supabase project + schema |
 | Pending | Magic link login page |
 | Pending | Protected dashboard shell |

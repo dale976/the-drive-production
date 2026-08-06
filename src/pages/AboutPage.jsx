@@ -2,6 +2,7 @@ import {Compass, Users, Hotel} from 'lucide-react';
 import rear911 from '../assets/rear_911.jpeg';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
+import PageMeta from '../components/PageMeta.jsx';
 
 export default function AboutPage({activePage = 'about'}) {
     const pillars = [
@@ -25,6 +26,12 @@ export default function AboutPage({activePage = 'about'}) {
     return (
         <div
             className="bg-brandDark text-white min-h-screen font-sans antialiased selection:bg-brandTeal selection:text-brandDark flex flex-col">
+
+            <PageMeta
+                title="About"
+                description="Meet the people and principles behind The Drive Touring Company and our curated supercar experiences."
+                path="/about"
+            />
 
             <Nav activePage={activePage}/>
 

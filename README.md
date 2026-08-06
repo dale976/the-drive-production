@@ -1,16 +1,42 @@
-# React + Vite
+# The Drive Touring Company
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Production marketing site for The Drive Touring Company, an exclusive supercar touring company operating curated driving experiences across the UK and Europe.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Requires Node.js 22 or later.
 
-## React Compiler
+```bash
+npm ci
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The development server prints its local URL. Routes are handled client-side by React Router.
 
-## Expanding the ESLint configuration
+## Quality checks
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run lint
+npm run build
+```
+
+Both checks run automatically for pull requests and pushes to `main`.
+
+## Deployment
+
+The static frontend is built by Vite and deployed to Cloudflare Workers using Wrangler:
+
+```bash
+npm run deploy
+```
+
+Cloudflare is configured to serve `index.html` for unknown asset paths so direct requests to client-side routes work correctly. Security headers are defined in `public/_headers`.
+
+## Current routes
+
+- `/` — company landing page
+- `/about` — company story and team
+- `/tours` — upcoming tour experiences
+- `/fleet` — lead and support vehicles
+
+The future member platform described in `docs/superpowers/specs/2026-06-18-tech-stack-architecture-design.md` is not part of the current static production site.
