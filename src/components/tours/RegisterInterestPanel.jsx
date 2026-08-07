@@ -32,7 +32,7 @@ export default function RegisterInterestPanel({ tour, mobile = false }) {
         <div className="mx-auto flex max-w-lg items-center justify-between gap-3">
           <div className="min-w-0">
             <p className="text-lg font-black leading-none text-brandTeal">{tour.price.display}</p>
-            <p className="mt-1 truncate text-[0.6rem] font-semibold uppercase tracking-wide text-gray-400">For two guests</p>
+            <p className="mt-1 truncate text-[0.7rem] font-semibold uppercase tracking-wide text-gray-400">For two guests</p>
           </div>
           <Link
             to={tour.registerPath}

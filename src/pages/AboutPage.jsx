@@ -98,7 +98,7 @@ export default function AboutPage({activePage = 'about'}) {
                                     {pillar.icon}
                                 </div>
                                 <h3 className="text-xs font-black tracking-[0.2em] mb-3 text-white">{pillar.title}</h3>
-                                <p className="text-xs text-gray-400 leading-relaxed font-medium text-center">{pillar.desc}</p>
+                                <p className="text-sm text-gray-400 leading-relaxed font-medium text-center">{pillar.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -123,7 +123,7 @@ export default function AboutPage({activePage = 'about'}) {
                                 >
                                     LH
                                 </span>
-                                <span className="text-[10px] text-gray-500 font-bold tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">Creative & Experience Design</span>
+                                <span className="text-xs text-gray-500 font-bold tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">Creative & Experience Design</span>
                             </div>
                             <div className="p-6 space-y-1 border-t border-gray-800 text-center">
                                 {/*<span className="text-[10px] text-brandTeal font-bold uppercase tracking-widest">Lord Business</span>*/}
@@ -140,7 +140,7 @@ export default function AboutPage({activePage = 'about'}) {
                                 >
                                     AD
                                 </span>
-                                <span className="text-[10px] text-gray-500 font-bold tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">Routes & Logistics</span>
+                                <span className="text-xs text-gray-500 font-bold tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">Routes & Logistics</span>
                             </div>
                             <div className="p-6 space-y-1 border-t border-gray-800 text-center">
                                 {/*<span className="text-[10px] text-brandTeal font-bold uppercase tracking-widest">Head of Exploration</span>*/}

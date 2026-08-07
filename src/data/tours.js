@@ -1,5 +1,3 @@
-const imageUrl = (relativePath) => new URL(relativePath, import.meta.url).href;
-
 export const alpineGtTour = {
   slug: 'alpine-gt-2027',
   path: '/tours/alpine-gt-2027',
@@ -18,12 +16,12 @@ export const alpineGtTour = {
     "A grand touring journey that begins with the sweep of the Black Forest, climbs into Switzerland's most celebrated mountain passes, and unwinds among the vineyards and old stone of Burgundy.",
   price: {
     totalPence: 249500,
-    display: '£2,495',
-    basis: 'Total for two guests sharing one room',
+    display: '£2495',
+    basis: 'Based on 2 people sharing',
   },
   images: {
-    hero: imageUrl('../assets/alpine-pass-hero.webp'),
-    listing: imageUrl('../assets/fez_alpine.jpg'),
+    hero: new URL('../assets/alpine-road-hero.jpg', import.meta.url).href,
+    listing: new URL('../assets/fez_alpine.jpg', import.meta.url).href,
   },
   highlights: [
     'Southern Black Forest roads',
@@ -147,7 +145,7 @@ export const alpineGtTour = {
       name: 'Parkhotel Adler',
       region: 'Hinterzarten · Black Forest',
       website: 'https://www.parkhoteladler.de/en/',
-      image: imageUrl('../assets/parkhotel-adler-exterior.webp'),
+      image: new URL('../assets/parkhotel-adler-exterior.webp', import.meta.url).href,
       alt: 'Parkhotel Adler historic hotel and grounds in Hinterzarten',
       description:
         'A historic High Black Forest estate combining parkland, regional character, luxury accommodation, dining, and wellness.',
@@ -157,7 +155,7 @@ export const alpineGtTour = {
       name: 'HERMITAGE Lake Lucerne',
       region: 'Weggis · Switzerland',
       website: 'https://www.hermitage.ch/en',
-      image: imageUrl('../assets/hermitage-lake-lucerne.webp'),
+      image: new URL('../assets/hermitage-lake-lucerne.webp', import.meta.url).href,
       alt: 'HERMITAGE hotel beside Lake Lucerne with Alpine views',
       description:
         "A calm lakeside base for two nights and the perfect counterpoint to Switzerland's greatest driving roads.",
@@ -167,7 +165,7 @@ export const alpineGtTour = {
       name: 'Château de Chailly',
       region: 'Burgundy · France',
       website: 'https://www.chailly.com/',
-      image: imageUrl('../assets/chateau-de-chailly-courtyard.webp'),
+      image: new URL('../assets/chateau-de-chailly-courtyard.webp', import.meta.url).href,
       alt: 'Historic Château de Chailly and its inner courtyard in Burgundy',
       description:
         'A historic château finale shaped around Burgundy hospitality, gastronomy, wellness, and a car-rally-friendly courtyard.',

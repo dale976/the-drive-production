@@ -41,7 +41,7 @@ export default function PackageDetails({ price, included, excluded, caveat }) {
           </div>
         </div>
 
-        <p className="mt-14 border border-white/10 bg-brandGray/60 px-5 py-4 text-xs leading-6 text-gray-400">
+        <p className="mt-14 border border-white/10 bg-brandGray/60 px-5 py-4 text-sm leading-6 text-gray-400">
           {caveat}
         </p>
       </div>

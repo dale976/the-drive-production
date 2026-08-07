@@ -6,15 +6,25 @@ export default function TourHero({ tour }) {
     { label: 'Accommodation', value: tour.nights },
     { label: 'Distance', value: tour.distance },
     { label: 'Group size', value: tour.groupSize },
-    { label: 'Price', value: `${tour.price.display} TOTAL FOR TWO` },
+    { label: 'Price', value: `${tour.price.display}*` },
   ];
 
   return (
     <header
       data-tour-hero
-      className="relative flex min-h-[calc(100svh-6rem)] flex-col justify-end overflow-hidden bg-brandDark bg-cover bg-center text-white"
-      style={{ backgroundImage: `url(${tour.images.hero})` }}
+      className="relative flex min-h-[calc(100svh-6rem)] flex-col justify-end overflow-hidden bg-brandDark text-white"
     >
+      <img
+        src={tour.images.hero}
+        alt=""
+        width="2000"
+        height="1499"
+        sizes="100vw"
+        loading="eager"
+        fetchPriority="high"
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,transparent_0%,rgba(11,15,18,0.35)_42%,rgba(11,15,18,0.9)_100%)]"
@@ -51,7 +61,7 @@ export default function TourHero({ tour }) {
                 index === metrics.length - 1 ? 'col-span-2 md:col-span-1' : ''
               } border-b border-r border-white/10 md:border-b-0`}
             >
-              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gray-500">
+              <dt className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-gray-500">
                 {metric.label}
               </dt>
               <dd className="mt-2 text-sm font-semibold uppercase tracking-wide text-white">

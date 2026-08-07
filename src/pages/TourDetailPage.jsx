@@ -1,17 +1,47 @@
 import Footer from '../components/Footer.jsx';
 import Nav from '../components/Nav.jsx';
 import PageMeta from '../components/PageMeta.jsx';
-import HotelFeature from '../components/tours/HotelFeature.jsx';
 import ItineraryDay from '../components/tours/ItineraryDay.jsx';
 import JourneyOverview from '../components/tours/JourneyOverview.jsx';
 import PackageDetails from '../components/tours/PackageDetails.jsx';
 import RegisterInterestPanel from '../components/tours/RegisterInterestPanel.jsx';
 import TourHero from '../components/tours/TourHero.jsx';
-import TourSectionNav from '../components/tours/TourSectionNav.jsx';
 import { alpineGtTour } from '../data/tours.js';
 
 const metaDescription =
   "Five days through the Black Forest, Switzerland's legendary Alpine passes and Burgundy, with four nights of luxury accommodation.";
+
+const tourSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristTrip',
+  name: alpineGtTour.title,
+  description: alpineGtTour.description,
+  url: 'https://thedrivetouringcompany.com/tours/alpine-gt-2027',
+  image: 'https://thedrivetouringcompany.com/alpine-gt-2027-social.jpg',
+  touristType: 'Supercar touring enthusiasts',
+  provider: {
+    '@type': 'Organization',
+    name: 'The Drive Touring Company',
+    url: 'https://thedrivetouringcompany.com/',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '2495',
+    priceCurrency: 'GBP',
+    description: 'Total price based on 2 people sharing',
+    url: 'https://thedrivetouringcompany.com/contact',
+  },
+  itinerary: {
+    '@type': 'ItemList',
+    numberOfItems: alpineGtTour.days.length,
+    itemListElement: alpineGtTour.days.map((day) => ({
+      '@type': 'ListItem',
+      position: day.number,
+      name: `Day ${day.number} — ${day.name}`,
+      description: day.routeOverview,
+    })),
+  },
+};
 
 export default function TourDetailPage() {
   const tour = alpineGtTour;
@@ -22,6 +52,7 @@ export default function TourDetailPage() {
         title="The Alpine GT 2027"
         description={metaDescription}
         path={tour.path}
+        structuredData={tourSchema}
       />
       <a
         href="#main-content"
@@ -32,7 +63,6 @@ export default function TourDetailPage() {
       <Nav activePage="tours" />
       <main id="main-content">
         <TourHero tour={tour} />
-        <TourSectionNav />
 
         <section
           aria-labelledby="experience-heading"
@@ -59,42 +89,21 @@ export default function TourDetailPage() {
         <section
           id="journey"
           aria-label="Five-day itinerary"
-          className="scroll-mt-40"
+          className="scroll-mt-28"
         >
-          {tour.days.map((day, index) => (
-            <ItineraryDay
-              key={day.number}
-              day={day}
-              align={index % 2 === 0 ? 'left' : 'right'}
-            />
-          ))}
-        </section>
+          {tour.days.map((day, index) => {
+            const hotelIndex = day.number === 1 ? 0 : day.number === 2 ? 1 : day.number === 4 ? 2 : null;
 
-        <section
-          id="stays"
-          aria-labelledby="stays-heading"
-          className="scroll-mt-40 bg-brandDark px-6 py-24"
-        >
-          <div className="mx-auto max-w-7xl">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-brandTeal">
-              Along the way
-            </p>
-            <h2
-              id="stays-heading"
-              className="mt-4 text-4xl font-black uppercase tracking-tight md:text-6xl"
-            >
-              Three remarkable stays
-            </h2>
-            <div className="mt-12 space-y-8">
-              {tour.hotels.map((hotel, index) => (
-                <HotelFeature
-                  key={hotel.name}
-                  hotel={hotel}
-                  reverse={index === 1}
-                />
-              ))}
-            </div>
-          </div>
+            return (
+              <ItineraryDay
+                key={day.number}
+                day={day}
+                align={index % 2 === 0 ? 'left' : 'right'}
+                hotel={hotelIndex !== null ? tour.hotels[hotelIndex] : null}
+                reverseHotel={day.number === 2}
+              />
+            );
+          })}
         </section>
 
         <PackageDetails

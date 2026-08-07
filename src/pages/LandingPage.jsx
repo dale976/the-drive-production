@@ -1,8 +1,19 @@
 import {Compass, Hotel, Users} from 'lucide-react';
+import {Link} from 'react-router-dom';
 import wet911 from '../assets/exige_edit.jpg';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
 import PageMeta from '../components/PageMeta.jsx';
+
+const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'The Drive Touring Company',
+    url: 'https://thedrivetouringcompany.com/',
+    email: 'info@thedrivetouringcompany.com',
+    logo: 'https://thedrivetouringcompany.com/favicon.png',
+    sameAs: ['https://www.instagram.com/thedrivetouringcompany'],
+};
 
 export default function LandingPage({activePage = 'home'}) {
     // const features = [
@@ -51,6 +62,7 @@ export default function LandingPage({activePage = 'home'}) {
             <PageMeta
                 description="Exclusive supercar touring experiences across epic roads, premium venues and unforgettable destinations."
                 path="/"
+                structuredData={organizationSchema}
             />
 
             <Nav activePage={activePage}/>
@@ -86,16 +98,20 @@ export default function LandingPage({activePage = 'home'}) {
                         <span className="text-white font-bold">We live for The Drive.</span>
                     </p>
 
-                    <div className="pt-4">
-                        <a href="/tours"
-                           className="inline-block bg-brandTeal text-brandDark font-black px-10 py-4 tracking-[0.2em] text-xs uppercase shadow-[0_0_30px_rgba(0,168,150,0.3)] hover:shadow-[0_0_50px_rgba(0,168,150,0.6)] hover:scale-105 transition-all duration-300">
+                    <div className="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row">
+                        <Link to="/tours"
+                           className="inline-flex min-h-12 items-center bg-brandTeal px-10 py-4 text-xs font-black uppercase tracking-[0.2em] text-brandDark shadow-[0_0_30px_rgba(0,168,150,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_50px_rgba(0,168,150,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal">
                             Explore Tours
-                        </a>
+                        </Link>
+                        <Link to="/contact"
+                           className="inline-flex min-h-12 items-center border border-white/30 bg-brandDark/60 px-8 py-4 text-xs font-black uppercase tracking-[0.18em] text-white backdrop-blur-sm transition-colors hover:border-brandTeal hover:text-brandTeal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal">
+                            Register interest
+                        </Link>
                     </div>
 
                     <div
                         className="inline-flex items-center gap-2 border border-cyan-400/30 bg-brandDark/80 backdrop-blur-md px-5 py-2 text-[11px] font-bold tracking-[0.25em] text-cyan-400 uppercase">
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"/> 2027 TOUR BOOKING COMING SOON
+                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"/> ALPINE GT 2027 · REGISTER INTEREST NOW
                     </div>
                 </div>
             </header>
@@ -166,10 +182,16 @@ export default function LandingPage({activePage = 'home'}) {
             {/* PILLARS */}
             <section id="pillars" className="py-24">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center max-w-xl mx-auto mb-16 space-y-2">
+                    <div className="text-center max-w-2xl mx-auto mb-16 space-y-5">
                         <span
                             className="text-brandTeal text-xs font-bold tracking-widest uppercase block">The Pillars</span>
                         <h2 className="text-2xl md:text-3xl font-black tracking-tight uppercase">HOW WE OPERATE</h2>
+                        <p className="mx-auto max-w-xl text-sm font-medium leading-relaxed text-gray-400 md:text-base">
+                            From the first route recce to the final hotel arrival, every element is considered as
+                            part of one complete experience. We bring together exceptional roads, distinctive
+                            places to stay and a carefully curated group of drivers—leaving you free to enjoy the
+                            journey, the car and the company.
+                        </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {pillars.map((pillar, idx) => (
@@ -180,7 +202,7 @@ export default function LandingPage({activePage = 'home'}) {
                                     {pillar.icon}
                                 </div>
                                 <h3 className="text-xs font-black tracking-[0.2em] mb-3 text-white">{pillar.title}</h3>
-                                <p className="text-xs text-gray-400 leading-relaxed font-medium text-center">{pillar.desc}</p>
+                                <p className="text-sm text-gray-400 leading-relaxed font-medium text-center">{pillar.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -208,7 +230,7 @@ export default function LandingPage({activePage = 'home'}) {
                                     LH
                                 </span>
                                 <span
-                                    className="text-[10px] text-gray-500 font-bold tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">Creative & Experience Design</span>
+                                    className="text-xs text-gray-500 font-bold tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">Creative & Experience Design</span>
                             </div>
                             <div className="p-6 space-y-1 border-t border-gray-800 text-center">
                                 {/*<span className="text-[10px] text-brandTeal font-bold uppercase tracking-widest">Lord Business</span>*/}
@@ -229,7 +251,7 @@ export default function LandingPage({activePage = 'home'}) {
                                     AD
                                 </span>
                                 <span
-                                    className="text-[10px] text-gray-500 font-bold tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">Routes & Logistics</span>
+                                    className="text-xs text-gray-500 font-bold tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">Routes & Logistics</span>
                             </div>
                             <div className="p-6 space-y-1 border-t border-gray-800 text-center">
                                 {/*<span className="text-[10px] text-brandTeal font-bold uppercase tracking-widest">Head of Exploration</span>*/}

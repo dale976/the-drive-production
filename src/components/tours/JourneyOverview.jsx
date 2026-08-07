@@ -4,19 +4,17 @@ export default function JourneyOverview({ days }) {
   const [activeDay, setActiveDay] = useState(null);
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return undefined;
-    }
-
     const observer = new IntersectionObserver(
       (entries) => {
-        const activeEntry = entries.find((entry) => entry.isIntersecting);
+        const activeEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
 
         if (activeEntry) {
           setActiveDay(Number(activeEntry.target.id.replace('day-', '')));
         }
       },
-      { rootMargin: '-25% 0px -55%', threshold: 0 },
+      { rootMargin: '-20% 0px -75%', threshold: 0 },
     );
 
     days.forEach((day) => {
@@ -29,33 +27,44 @@ export default function JourneyOverview({ days }) {
   }, [days]);
 
   return (
-    <section className="bg-brandGray px-6 py-20 text-white" aria-labelledby="journey-overview-heading">
+    <section className="overflow-hidden border-y border-white/10 bg-[#11171b] px-6 py-16 text-white md:py-20" aria-labelledby="journey-overview-heading">
       <div className="mx-auto max-w-7xl">
-        <p className="text-xs font-bold uppercase tracking-[0.3em] text-brandTeal">
-          Tour at a glance
-        </p>
-        <h2 id="journey-overview-heading" className="mt-4 text-3xl font-black uppercase tracking-tight md:text-5xl">
-          Five days on the road
-        </h2>
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-brandTeal">
+              Your road book
+            </p>
+            <h2 id="journey-overview-heading" className="mt-4 text-3xl font-black uppercase tracking-tight md:text-5xl">
+              Five distinct chapters
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm leading-6 text-gray-400">
+            Select a chapter to move through the journey.
+          </p>
+        </div>
 
-        <ol className="mt-10 border-t border-white/10">
+        <ol className="mt-10 flex snap-x snap-mandatory overflow-x-auto border-y border-white/10 md:grid md:grid-cols-5 md:overflow-visible">
           {days.map((day) => (
-            <li key={day.number}>
+            <li key={day.number} className="min-w-[76%] snap-start border-r border-white/10 sm:min-w-[46%] md:min-w-0">
               <a
                 href={`#day-${day.number}`}
                 aria-current={activeDay === day.number ? 'location' : undefined}
-                className={`grid min-h-16 gap-3 border-b border-white/10 px-4 py-6 transition-colors hover:border-brandTeal/60 hover:bg-white/[0.03] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brandTeal sm:grid-cols-[5rem_1fr_auto] sm:items-center sm:gap-6 ${
-                  activeDay === day.number ? 'bg-white/[0.06] text-white' : 'text-white'
+                className={`group flex min-h-48 flex-col justify-between px-5 py-6 transition-colors hover:bg-white/[0.04] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brandTeal ${
+                  activeDay === day.number ? 'bg-white/[0.06]' : ''
                 }`}
               >
-                <span className="text-3xl font-black tabular-nums tracking-tight">
-                  {String(day.number).padStart(2, '0')}
+                <span className={`text-5xl font-black tabular-nums leading-none tracking-[-0.06em] transition-colors ${
+                  activeDay === day.number ? 'text-brandTeal' : 'text-white/20 group-hover:text-brandTeal'
+                }`}>
+                  0{day.number}
                 </span>
-                <span className="text-lg font-bold uppercase tracking-wide">
-                  {day.name}
-                </span>
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">
-                  {day.drivingStyle}
+                <span>
+                  <span className="block text-base font-bold uppercase leading-5 tracking-wide text-white">
+                    {day.name}
+                  </span>
+                  <span className="mt-3 block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gray-500">
+                    {day.drivingStyle}
+                  </span>
                 </span>
               </a>
             </li>
