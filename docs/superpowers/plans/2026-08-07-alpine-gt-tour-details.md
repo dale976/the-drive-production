@@ -20,6 +20,9 @@
 - Hotel images come from the official hotel sites, are saved locally, and are never hotlinked at runtime.
 - All mileage values are approximate and the route is subject to weather, road conditions, timing, and organiser adjustment.
 - Every task finishes with its own verification and commit.
+- Hero metrics must sit inside the same centred maximum-width container as the editorial content, not a full-viewport strip.
+- The Tour-at-a-glance rail is accessible anchor navigation to each day chapter; it has no preselected or saturated-blue stage.
+- Each day sells a premium experience through an editorial headline, concise route overview, and curated highlights; do not render waypoint-by-waypoint routes or stop cards.
 
 ---
 
@@ -50,6 +53,15 @@
 - `src/pages/ToursPage.jsx` — consume shared tour data and link the Alpine card.
 - `public/sitemap.xml` — list both new public routes.
 - `AGENTS.md` — update the current-phase table and repository layout after implementation.
+
+### Refine
+
+- `src/data/tours.js` — replace detailed waypoint and stop fields with approved premium editorial copy, concise route overviews, and curated highlights.
+- `src/components/tours/TourHero.jsx` — constrain the metrics panel to the shared content width.
+- `src/components/tours/JourneyOverview.jsx` — make the five-stage rail anchor-link to day chapters, with a progressive active state.
+- `src/components/tours/ItineraryDay.jsx` — render experience-led daily chapters rather than stop-by-stop route content.
+- `src/pages/TourDetailPage.jsx` — give each day chapter a stable anchor target.
+- `tests/tours.test.js` — assert the refined data contract and concise route content.
 
 ---
 
@@ -1016,6 +1028,108 @@ Expected: only Alpine GT implementation, authorised imagery, sitemap, tests, and
 ```bash
 git add public/sitemap.xml AGENTS.md
 git commit -m "Document and index Alpine GT detail page"
+```
+
+---
+
+### Task 7: Refine the Premium Journey Experience
+
+**Files:**
+- Modify: `src/data/tours.js`
+- Modify: `tests/tours.test.js`
+- Modify: `src/components/tours/TourHero.jsx`
+- Modify: `src/components/tours/JourneyOverview.jsx`
+- Modify: `src/components/tours/ItineraryDay.jsx`
+- Modify: `src/pages/TourDetailPage.jsx`
+
+**Interfaces:**
+- Each `alpineGtTour.days` record retains its existing metadata and adds `headline`, `overview`, `routeOverview`, and `highlights` (two or three strings).
+- Day records no longer expose `stops` or waypoint-by-waypoint `route` arrays.
+- `JourneyOverview({ days })` links each stage to `#day-${day.number}`.
+- `ItineraryDay({ day, align = 'left' })` renders an article target with `id={`day-${day.number}`}`.
+
+- [ ] **Step 1: Write the failing data-contract test**
+
+Append this test to `tests/tours.test.js`:
+
+```js
+test('Alpine GT days use concise premium editorial content', () => {
+  for (const day of alpineGtTour.days) {
+    assert.equal(typeof day.headline, 'string');
+    assert.equal(typeof day.overview, 'string');
+    assert.equal(typeof day.routeOverview, 'string');
+    assert.ok(day.highlights.length >= 2 && day.highlights.length <= 3);
+    assert.equal('stops' in day, false);
+  }
+
+  assert.match(alpineGtTour.days[2].routeOverview, /Furka.*Grimsel.*Susten/);
+  assert.match(alpineGtTour.days[3].routeOverview, /Brünig.*Gstaad/);
+  assert.doesNotMatch(alpineGtTour.days[3].routeOverview, /Klausen/);
+});
+```
+
+- [ ] **Step 2: Run the focused test to verify it fails**
+
+Run `node --test --test-name-pattern="concise premium" tests/tours.test.js`.
+
+Expected: FAIL because days do not expose the editorial fields and still expose `stops`.
+
+- [ ] **Step 3: Replace waypoint data with premium editorial content**
+
+In `src/data/tours.js`, remove `route` arrays and `stops`. Add `headline`, `overview`, `routeOverview`, and `highlights` to each day. Use these exact route overviews:
+
+```js
+[
+  'Calais through eastern France, then off the autoroute for the final approach into the Black Forest and Hinterzarten.',
+  'The High Black Forest via Titisee, Schluchsee, St. Blasien, and the southern forest roads, then across to Lake Lucerne.',
+  'Lake Lucerne to Andermatt, then Furka, Grimsel, and Susten before returning to Weggis.',
+  'Lake Lucerne via Brünig Pass, Brienz, Spiez, Gstaad, and the Jura foothills to Burgundy.',
+  'Burgundy through Troyes and Reims to Calais and the Eurotunnel.',
+]
+```
+
+Write restrained premium copy for the forest arrival, forest-to-lake transition, Three Passes high-road drama, Alpine-to-vineyard château arrival, and reflective return. Do not claim unapproved inclusions.
+
+- [ ] **Step 4: Constrain hero metrics**
+
+In `src/components/tours/TourHero.jsx`, wrap the existing metrics `dl` in a `mx-auto w-full max-w-7xl px-6` container. Preserve the responsive grid, but make the contained panel use its own border and subtle dark surface rather than reading as a full-viewport strip.
+
+- [ ] **Step 5: Turn Tour-at-a-glance into navigation**
+
+In `src/components/tours/JourneyOverview.jsx`, replace each presentational row with:
+
+```jsx
+<a
+  href={`#day-${day.number}`}
+  className="grid min-h-16 gap-3 border-b border-white/10 px-4 py-6 transition-colors hover:border-brandTeal/60 hover:bg-white/[0.03] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brandTeal sm:grid-cols-[5rem_1fr_auto] sm:items-center sm:gap-6"
+>
+  <span>{String(day.number).padStart(2, '0')}</span>
+  <span>{day.name}</span>
+  <span>{day.drivingStyle}</span>
+</a>
+```
+
+Remove all `day.hero` conditional colour/background classes. Add progressive `IntersectionObserver` active tracking that disconnects on cleanup and is skipped when reduced motion is preferred. The active state is tonal only, never a saturated blue or teal fill; anchors must work without scripting.
+
+- [ ] **Step 6: Render editorial day chapters**
+
+In `src/components/tours/ItineraryDay.jsx`, give the article `id={`day-${day.number}`}` and `scroll-mt-28`. Render `headline`, `overview`, a `Route overview` paragraph, and a two/three-item highlights list. Keep distance, driving style, overnight, and the Day 3 pass motif. Remove the arrow-separated waypoint list and stop-card section.
+
+- [ ] **Step 7: Verify automated checks**
+
+Run `npm test`, `npm run lint`, `npm run build`, and `git diff --check`.
+
+Expected: all pass with no whitespace errors.
+
+- [ ] **Step 8: Perform browser QA**
+
+At `/tours/alpine-gt-2027`, verify at 1440×1000, 768×1024, 390×844, and 320×568 that metrics align to content width; every journey stage is keyboard-focusable and reaches the matching chapter; no stage is blue by default; each chapter is editorial and concise with no waypoint/stop list; Day 3 remains strongest; and reduced-motion leaves all content and navigation usable.
+
+- [ ] **Step 9: Commit the refinement**
+
+```bash
+git add src/data/tours.js tests/tours.test.js src/components/tours/TourHero.jsx src/components/tours/JourneyOverview.jsx src/components/tours/ItineraryDay.jsx src/pages/TourDetailPage.jsx
+git commit -m "Refine Alpine GT premium journey"
 ```
 
 ---
