@@ -5,7 +5,8 @@ export default function ItineraryDay({ day, align = 'left' }) {
 
   return (
     <article
-      className={`relative overflow-hidden border-b border-white/10 px-6 py-20 text-white md:py-28 ${
+      id={`day-${day.number}`}
+      className={`relative scroll-mt-28 overflow-hidden border-b border-white/10 px-6 py-20 text-white md:py-28 ${
         day.hero
           ? 'bg-[#071d20] bg-[radial-gradient(circle_at_top_right,rgba(0,166,166,0.24),transparent_52%)]'
           : 'bg-brandDark'
@@ -40,29 +41,25 @@ export default function ItineraryDay({ day, align = 'left' }) {
             </div>
           </dl>
 
-          <p className="mt-8 max-w-3xl text-lg leading-8 text-gray-300 md:text-xl">
-            {day.intro}
+          <p className="mt-8 max-w-3xl text-xl font-bold leading-8 text-white md:text-2xl">
+            {day.headline}
           </p>
 
-          <div className="mt-12">
-            <h4 className="text-xs font-bold uppercase tracking-[0.25em] text-brandTeal">Route</h4>
-            <ol className="mt-5 flex flex-wrap gap-x-2 gap-y-3" aria-label={`Day ${day.number} route`}>
-              {day.route.map((place, index) => (
-                <li key={`${place}-${index}`} className="flex items-center gap-2 text-sm font-semibold text-gray-200">
-                  <span>{place}</span>
-                  {index < day.route.length - 1 && <span aria-hidden="true" className="text-brandTeal">→</span>}
-                </li>
-              ))}
-            </ol>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-300 md:text-xl">
+            {day.overview}
+          </p>
+
+          <div className="mt-10 max-w-3xl border-l border-brandTeal/50 pl-5">
+            <h4 className="text-xs font-bold uppercase tracking-[0.25em] text-brandTeal">Route overview</h4>
+            <p className="mt-3 leading-7 text-gray-300">{day.routeOverview}</p>
           </div>
 
           <div className="mt-10">
-            <h4 className="text-xs font-bold uppercase tracking-[0.25em] text-brandTeal">Stops</h4>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {day.stops.map((stop) => (
-                <li key={`${stop.place}-${stop.note}`} className="border border-white/10 bg-black/15 px-4 py-3">
-                  <p className="text-sm font-bold uppercase tracking-wide text-white">{stop.place}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.15em] text-gray-500">{stop.note}</p>
+            <h4 className="text-xs font-bold uppercase tracking-[0.25em] text-brandTeal">Highlights</h4>
+            <ul className="mt-4 grid max-w-3xl gap-3 sm:grid-cols-2">
+              {day.highlights.map((highlight) => (
+                <li key={highlight} className="border border-white/10 bg-black/15 px-4 py-3 text-sm font-semibold text-gray-200">
+                  {highlight}
                 </li>
               ))}
             </ul>

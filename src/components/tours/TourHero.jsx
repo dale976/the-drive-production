@@ -42,23 +42,25 @@ export default function TourHero({ tour }) {
         </Link>
       </div>
 
-      <dl className="relative grid grid-cols-2 border-t border-white/15 bg-brandDark/85 backdrop-blur-md md:grid-cols-5">
-        {metrics.map((metric, index) => (
-          <div
-            key={metric.label}
-            className={`min-h-24 px-5 py-5 md:px-6 ${
-              index === metrics.length - 1 ? 'col-span-2 md:col-span-1' : ''
-            } border-b border-r border-white/10 md:border-b-0`}
-          >
-            <dt className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gray-500">
-              {metric.label}
-            </dt>
-            <dd className="mt-2 text-sm font-semibold uppercase tracking-wide text-white">
-              {metric.value}
-            </dd>
-          </div>
-        ))}
-      </dl>
+      <div className="relative mx-auto w-full max-w-7xl px-6">
+        <dl className="grid grid-cols-2 border border-white/15 bg-brandDark/85 backdrop-blur-md md:grid-cols-5">
+          {metrics.map((metric, index) => (
+            <div
+              key={metric.label}
+              className={`min-h-24 px-5 py-5 md:px-6 ${
+                index === metrics.length - 1 ? 'col-span-2 md:col-span-1' : ''
+              } border-b border-r border-white/10 md:border-b-0`}
+            >
+              <dt className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gray-500">
+                {metric.label}
+              </dt>
+              <dd className="mt-2 text-sm font-semibold uppercase tracking-wide text-white">
+                {metric.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
     </header>
   );
 }

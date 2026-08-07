@@ -32,10 +32,24 @@ test('Alpine GT contains the approved five-day journey', () => {
     'Susten Pass',
   ]);
   assert.equal(
-    alpineGtTour.days[3].route.includes('Klausen Pass'),
+    alpineGtTour.days[3].routeOverview.includes('Klausen Pass'),
     false,
   );
-  assert.equal(alpineGtTour.days[3].route.includes('Gstaad'), true);
+  assert.equal(alpineGtTour.days[3].routeOverview.includes('Gstaad'), true);
+});
+
+test('Alpine GT days use concise premium editorial content', () => {
+  for (const day of alpineGtTour.days) {
+    assert.equal(typeof day.headline, 'string');
+    assert.equal(typeof day.overview, 'string');
+    assert.equal(typeof day.routeOverview, 'string');
+    assert.ok(day.highlights.length >= 2 && day.highlights.length <= 3);
+    assert.equal('stops' in day, false);
+  }
+
+  assert.match(alpineGtTour.days[2].routeOverview, /Furka.*Grimsel.*Susten/);
+  assert.match(alpineGtTour.days[3].routeOverview, /Brünig.*Gstaad/);
+  assert.doesNotMatch(alpineGtTour.days[3].routeOverview, /Klausen/);
 });
 
 test('Alpine GT package details are complete', () => {
