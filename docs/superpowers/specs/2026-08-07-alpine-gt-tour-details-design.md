@@ -69,7 +69,7 @@ The opening viewport contains:
 
 The CTA links to `/contact`.
 
-Immediately below the hero, a metric strip shows:
+Immediately below the hero, a compact metric panel shows:
 
 | Metric | Value |
 |---|---|
@@ -78,6 +78,8 @@ Immediately below the hero, a metric strip shows:
 | Approximate distance | 1,550 miles |
 | Tour size | Maximum 15 cars |
 | Price | £2,495 total for two |
+
+The panel sits within the same centred maximum-width container as the main editorial content; it must not span the full viewport width. On smaller screens it wraps gracefully while retaining its quiet, premium card treatment.
 
 ### 2. Opening manifesto
 
@@ -91,15 +93,17 @@ Copy should be concise, confident, and evocative without overclaiming.
 
 ### 3. Five-day journey rail
 
-The core itinerary is a vertical editorial journey. Every day displays:
+The rail is a five-stage set of in-page links to the editorial chapters below. Each stage includes the day number, day name, and driving style. It is fully usable as ordinary anchor navigation without scripting; with progressive enhancement, the current chapter receives a restrained active treatment as it enters the reading position. No stage is preselected or coloured blue by default. In particular, Day 3's stronger visual identity belongs to its full chapter, not the overview rail.
+
+The core itinerary is a vertical editorial journey designed to sell the feeling of each day, rather than reproduce a sat-nav itinerary. Every day displays:
 
 - Day number and curated day name.
 - Theme.
 - Approximate mileage.
 - Driving-style label.
-- Short atmospheric introduction.
-- Key route sequence.
-- Highlighted stops.
+- A compelling editorial headline and atmospheric overview.
+- A concise route overview naming the defining roads, regions, or destinations—not every stop.
+- Two or three curated experiential highlights.
 - Overnight destination or homeward endpoint.
 
 #### Day 1 — The Grand Departure
@@ -108,11 +112,9 @@ The core itinerary is a vertical editorial journey. Every day displays:
 **Approximate distance:** 450 miles  
 **Driving style:** Efficient GT touring
 
-**Route:**
+**Route overview:** Calais through eastern France, then off the autoroute for the final approach into the Black Forest and Hinterzarten.
 
-Eurotunnel LeShuttle Terminal, Calais → Saint-Omer (comfort stop) → Reims (lunch) → Metz (coffee/fuel) → Strasbourg bypass → Offenburg → Triberg (optional scenic stop if timing permits) → Hinterzarten → Parkhotel Adler.
-
-The copy should explain that the day favours efficient autoroutes through eastern France before the final scenic approach into the Black Forest.
+The copy should frame this as the grand opening: a confident continental crossing, an unhurried crew rhythm, and the moment the road finally folds into the forest before the Parkhotel Adler reveal.
 
 #### Day 2 — Into the Black Forest
 
@@ -120,15 +122,9 @@ The copy should explain that the day favours efficient autoroutes through easter
 **Approximate distance:** 220–250 miles  
 **Driving style:** Flowing forest roads
 
-**Morning route:**
+**Route overview:** The High Black Forest via Titisee, Schluchsee, St. Blasien, and the southern forest roads, then across to Lake Lucerne.
 
-Parkhotel Adler → Titisee → Schluchsee → St. Blasien → Todtnau → Münstertal → Badenweiler.
-
-**Afternoon route:**
-
-Badenweiler → Todtmoos → Herrischried → Rickenbach → Waldshut-Tiengen → Zug → Küssnacht → HERMITAGE Lake Lucerne.
-
-The page should state the route philosophy—selecting the strongest southern Black Forest roads from the hotel location—without referring to unfinished café selection work.
+The page should sell the change of pace: long, flowing forest sections, changing elevation, and a composed lakeside arrival at HERMITAGE. It may state the route philosophy—selecting the strongest southern Black Forest roads from the hotel location—but must not refer to unfinished café selection work.
 
 #### Day 3 — The Legendary Three Passes
 
@@ -136,11 +132,9 @@ The page should state the route philosophy—selecting the strongest southern Bl
 **Approximate distance:** 220 miles  
 **Driving style:** Iconic mountain passes
 
-**Route:**
+**Route overview:** Lake Lucerne to Andermatt, then Furka, Grimsel, and Susten before returning to Weggis.
 
-HERMITAGE Lake Lucerne → Brunnen → Altdorf → Wassen → Andermatt (coffee) → Furka Pass → Belvedere Hotel → Gletsch → Grimsel Pass → Innertkirchen → Meiringen (lunch) → Susten Pass → Wassen → Altdorf → Brunnen → Weggis → HERMITAGE Lake Lucerne.
-
-This is the hero day. Its visual treatment is larger and more dramatic than every other chapter. Furka, Grimsel, and Susten are displayed prominently as a three-part typographic motif.
+This is the hero day: a rare, expertly paced circuit of Switzerland's great high roads, with glacier scenery, high-altitude drama, and the welcome return to the lake. Its visual treatment is larger and more dramatic than every other chapter. Furka, Grimsel, and Susten are displayed prominently as a three-part typographic motif.
 
 #### Day 4 — From Alps to Vineyards
 
@@ -148,11 +142,9 @@ This is the hero day. Its visual treatment is larger and more dramatic than ever
 **Approximate distance:** 260–280 miles  
 **Driving style:** Scenic touring
 
-**Primary route:**
+**Route overview:** Lake Lucerne via Brünig Pass, Brienz, Spiez, Gstaad, and the Jura foothills to Burgundy.
 
-HERMITAGE Lake Lucerne → Küssnacht → Zug → Lucerne outskirts → Sarnen → Brünig Pass → Brienz → Spiez → Gstaad (lunch) → Château-d'Oex → Bulle → Vallorbe → Champagnole → Poligny → Beaune → Château de Chailly.
-
-The page uses this recommended westward route. It does not present the Liechtenstein, Walensee, Glarus, or Klausen Pass alternative as part of the primary itinerary. The narrative emphasises avoiding cities, maintaining a scenic and relaxed pace, and arriving at the château at approximately 17:00.
+The page uses this recommended westward route. It does not present the Liechtenstein, Walensee, Glarus, or Klausen Pass alternative as part of the primary itinerary. The narrative sells the transition from Alpine scale to vineyard country: no city slog, generous scenic rhythm, and an arrival at Château de Chailly around 17:00, when the courtyard and final-night hospitality come into their own.
 
 #### Day 5 — The Journey Home
 
@@ -160,11 +152,9 @@ The page uses this recommended westward route. It does not present the Liechtens
 **Approximate distance:** 400 miles  
 **Driving style:** Relaxed autoroute
 
-**Route:**
+**Route overview:** Burgundy through Troyes and Reims to Calais and the Eurotunnel.
 
-Château de Chailly → Beaune → Troyes (coffee) → Reims (lunch if required) → Calais → Eurotunnel.
-
-The close should feel reflective: an efficient return journey that gives guests time to absorb the week.
+The close should feel reflective and polished: an easy, efficient return journey with the space to replay the passes, the hotels, and the company of the week.
 
 ### 4. Accommodation features
 
@@ -204,6 +194,8 @@ Positioning:
 Each feature links to the hotel's official website in a new tab with appropriate accessible external-link text.
 
 ### 5. Tour-at-a-glance summary
+
+This compact summary is the clickable five-stage journey rail described above. Each stage is a generous, accessible text link to its matching day chapter, with a premium hover, focus, and active state. It is navigation, not a second itinerary; therefore it does not include stop-by-stop route detail.
 
 | Day | Name | Driving style |
 |---|---|---|
@@ -246,7 +238,8 @@ The `/contact` page is a branded placeholder only. It confirms that the customer
 
 ## Interaction Design
 
-- Desktop: sticky section navigation for `Journey`, `Stays`, and `Included`.
+- Desktop: sticky section navigation for `Journey`, `Stays`, and `Included`; the five-stage journey rail provides direct links to every day chapter.
+- The active journey stage is derived from the reader's position only when scripting is available. It must use a restrained tonal treatment, never an unexplained saturated blue fill.
 - Mobile: persistent but unobtrusive `Register Interest` bar after the hero leaves view.
 - In-page links use smooth native navigation where compatible with reduced-motion preferences.
 - Interactive imagery may use a restrained scale effect on hover/focus.
@@ -274,8 +267,8 @@ Recommended component boundaries:
 | Component | Responsibility |
 |---|---|
 | `TourHero` | Hero imagery, identity, metrics, and primary CTA |
-| `JourneyOverview` | Compact five-day summary |
-| `ItineraryDay` | Reusable daily editorial chapter |
+| `JourneyOverview` | Clickable five-stage journey rail with progressive active state |
+| `ItineraryDay` | Reusable premium editorial chapter with concise route overview and highlights |
 | `HotelFeature` | Hotel image, positioning copy, and official link |
 | `PackageDetails` | Price, inclusions, and exclusions |
 | `RegisterInterestPanel` | Closing conversion section |
@@ -338,8 +331,11 @@ The route-level detail page composes these units and contains minimal presentati
 
 ### Content
 
-- All five named days, themes, distances, and primary routes match this specification.
+- All five named days, themes, distances, and concise route overviews match this specification.
+- Each day sells a distinct premium experience through a strong headline, atmospheric overview, and curated highlights; it does not list every waypoint.
 - Day 3 is the visual and narrative centrepiece.
+- The metrics panel aligns with the main content container rather than spanning the viewport.
+- Every Tour-at-a-glance stage is an accessible link to its day chapter, and none is blue by default.
 - Day 4 uses the Brünig/Gstaad/Burgundy route and excludes Klausen from the primary itinerary.
 - Price is always described as £2,495 total for two guests sharing one room.
 - Inclusions and exclusions match this specification exactly.
