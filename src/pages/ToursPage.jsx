@@ -84,7 +84,12 @@ export default function ToursPage({ activePage = 'tours' }) {
                                 <span>{tour.subtitle}</span>
                             </div>
                             <h3 className="text-2xl md:text-4xl font-black tracking-tight text-white group-hover:text-brandTeal transition-colors duration-300">
-                                {tour.title}
+                                <Link
+                                    to={tour.path}
+                                    className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal"
+                                >
+                                    {tour.title}
+                                </Link>
                             </h3>
                             <p className="text-[11px] font-bold tracking-wider text-gray-400 uppercase italic">
                                 "{tour.tagline}"
