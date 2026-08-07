@@ -6,6 +6,7 @@ const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
 const FleetPage = lazy(() => import('./pages/FleetPage.jsx'));
 const ToursPage = lazy(() => import('./pages/ToursPage.jsx'));
 const TourDetailPage = lazy(() => import('./pages/TourDetailPage.jsx'));
+const ContactPlaceholderPage = lazy(() => import('./pages/ContactPlaceholderPage.jsx'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx'));
 
 function PageFallback() {
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/tours" element={<ToursPage activePage="tours" />} />
           <Route path="/fleet" element={<FleetPage activePage="fleet" />} />
           <Route path="/tours/alpine-gt-2027" element={<TourDetailPage />} />
+          <Route path="/contact" element={<ContactPlaceholderPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

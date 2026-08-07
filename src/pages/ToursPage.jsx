@@ -1,24 +1,13 @@
 import { Calendar, Clock, Users, Compass } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import toursHeroImg from '../assets/gt3_chateau.jpg';
-import tourAlpineImg from '../assets/fez_alpine.jpg';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
 import PageMeta from '../components/PageMeta.jsx';
+import { alpineGtTour } from '../data/tours.js';
 
 export default function ToursPage({ activePage = 'tours' }) {
-    const tour = {
-        title: 'THE ALPINE GT 2027',
-        subtitle: 'BLACK FOREST GERMANY, SWISS ALPS, BURGUNDY FRANCE',
-        duration: '5 DAYS / 4 NIGHTS',
-        distance: '1,500 MLS',
-        groupSize: 'MAX 15 CARS',
-        price: 'TBC',
-        date: '10 - 14 JUNE 2027',
-        tagline: 'HIGH-ALTITUDE HAIRPINS & PREMIUM VENUES',
-        description: 'Conquer Europe\'s most celebrated driving roads. This curated experience connects the Black Forest with the legendary Swiss Alpine passes of Furka, Grimsel and Susten, before unwinding through vineyard-lined roads and a luxury château stay in the heart of Burgundy.',
-        image: tourAlpineImg,
-        highlights: ['Black Forest Sweep', 'The Holy Trinity Alpine Loop', 'Burgundy Château Celebration']
-    };
+    const tour = alpineGtTour;
 
     return (
         <div className="bg-brandDark text-white min-h-screen font-sans antialiased selection:bg-brandTeal selection:text-brandDark flex flex-col">
@@ -65,10 +54,14 @@ export default function ToursPage({ activePage = 'tours' }) {
                 <div className="bg-brandDark/80 border border-gray-800 hover:border-brandTeal/20 transition-all duration-500 grid grid-cols-1 lg:grid-cols-12 overflow-hidden group shadow-2xl">
 
                     {/* Left: Imagery Column */}
-                    <div className="relative lg:col-span-5 min-h-[300px] lg:min-h-auto overflow-hidden">
+                    <Link
+                        to={tour.path}
+                        aria-label={`Explore ${tour.title}`}
+                        className="relative lg:col-span-5 min-h-[300px] lg:min-h-auto overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal"
+                    >
                         <div
                             className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-[1.02] transition-transform duration-1000 ease-out"
-                            style={{ backgroundImage: `url('${tour.image}')` }}
+                            style={{ backgroundImage: `url('${tour.images.listing}')` }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-brandDark via-transparent to-transparent opacity-90 lg:opacity-60" />
 
@@ -79,7 +72,7 @@ export default function ToursPage({ activePage = 'tours' }) {
                                 <span className="text-[10px] font-black tracking-widest text-white">{tour.date}</span>
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
                     {/* Right: Specification & Copy */}
                     <div className="lg:col-span-7 p-8 md:p-12 flex flex-col justify-between space-y-8">
@@ -123,8 +116,9 @@ export default function ToursPage({ activePage = 'tours' }) {
                             </div>
                             <div className="space-y-0.5">
                                 <span className="text-[9px] text-gray-500 font-bold tracking-widest block uppercase">PRICE</span>
-                                <div className="flex items-center gap-1.5 text-xs font-black text-brandTeal">
-                                    <span>{tour.price}</span>
+                                <div className="text-xs font-black text-brandTeal">
+                                    <span className="block">{tour.price.display}</span>
+                                    <span className="mt-1 block text-[8px] tracking-widest text-gray-500">FOR TWO SHARING</span>
                                 </div>
                             </div>
                         </div>
@@ -148,9 +142,13 @@ export default function ToursPage({ activePage = 'tours' }) {
 
                         {/* CTA */}
                         <div className="pt-4 flex items-center justify-between border-t border-gray-800/60">
-                            <a href="mailto:info@thedrivetouringcompany.com?subject=Alpine GT 2027 - Tour Brochure Request" className="border-2 border-brandTeal text-brandTeal font-black px-6 py-3 tracking-[0.2em] text-[10px] bg-brandDark/40 backdrop-blur-sm hover:bg-brandTeal hover:text-brandDark transition-all duration-300 uppercase shadow-[0_0_15px_rgba(0,168,150,0.1)] hover:shadow-[0_0_30px_rgba(0,168,150,0.4)]">
-                                REQUEST TOUR BROCHURE
-                            </a>
+                            <Link
+                                to={tour.path}
+                                aria-label={`Explore ${tour.title}`}
+                                className="inline-flex min-h-11 items-center border-2 border-brandTeal px-6 py-3 text-[10px] font-black tracking-[0.2em] text-brandTeal transition-colors hover:bg-brandTeal hover:text-brandDark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal"
+                            >
+                                EXPLORE THE TOUR
+                            </Link>
                             <span className="hidden md:flex items-center gap-1.5 text-[10px] font-black tracking-widest text-gray-600 cursor-default opacity-50">
                                 BOOKING OPENING SOON
                             </span>
