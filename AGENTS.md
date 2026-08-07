@@ -62,3 +62,29 @@ For multi-step tasks, state a brief plan:
 ```
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+
+## Repository Layout
+
+```
+src/
+  components/
+    tours/                       # Alpine GT detail-page components
+  data/
+    tours.js                     # Shared tour content
+  pages/
+    ContactPlaceholderPage.jsx  # Register-interest placeholder route
+    TourDetailPage.jsx           # Alpine GT tour detail route
+```
+
+## Current Phase
+
+| Status | Feature |
+|---|---|
+| Done | Alpine GT static tour detail page |
+| Done | Register-interest contact placeholder |
+| Pending | Customer contact form |
+| Pending | Supabase project + schema |
+| Pending | Magic link login page |
+| Pending | Protected dashboard shell |
+| Pending | Booking flow |
+| Pending | Payment flow |
