@@ -91,7 +91,7 @@ export default function FleetPage({ activePage = 'fleet' }) {
                                 {/* Details */}
                                 <div className="p-8 space-y-6 flex-grow flex flex-col justify-between text-center">
                                     <div className="md:text-left">
-                                        <span className="text-[10px] text-brandTeal tracking-widest font-bold block uppercase mb-1">
+                                        <span className="text-xs text-brandTeal tracking-widest font-bold block uppercase mb-1">
                                             {car.tagline}
                                         </span>
                                         <h3 className="text-xl md:text-2xl font-black tracking-wide text-white group-hover:text-brandTeal transition-colors duration-300">
@@ -102,15 +102,15 @@ export default function FleetPage({ activePage = 'fleet' }) {
                                     {/* Performance Metrics */}
                                     <div className="grid grid-cols-3 gap-2 border-y border-gray-800 py-4 text-center bg-brandDark/40">
                                         <div>
-                                            <span className="text-[9px] text-gray-500 block tracking-widest font-bold uppercase mb-1">POWER</span>
+                                            <span className="text-[0.7rem] text-gray-500 block tracking-widest font-bold uppercase mb-1">POWER</span>
                                             <span className="text-xs font-black tracking-wider text-gray-200">{car.specs.power}</span>
                                         </div>
                                         <div className="border-x border-gray-800">
-                                            <span className="text-[9px] text-gray-500 block tracking-widest font-bold uppercase mb-1">0-100 KM/H</span>
+                                            <span className="text-[0.7rem] text-gray-500 block tracking-widest font-bold uppercase mb-1">0-100 KM/H</span>
                                             <span className="text-xs font-black tracking-wider text-gray-200">{car.specs.zeroToSixty}</span>
                                         </div>
                                         <div>
-                                            <span className="text-[9px] text-gray-500 block tracking-widest font-bold uppercase mb-1">V-MAX</span>
+                                            <span className="text-[0.7rem] text-gray-500 block tracking-widest font-bold uppercase mb-1">V-MAX</span>
                                             <span className="text-xs font-black tracking-wider text-gray-200">{car.specs.topSpeed}</span>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@ export default function FleetPage({ activePage = 'fleet' }) {
                 <div className="max-w-5xl mx-auto px-6 text-center space-y-4">
                     <span className="text-brandTeal text-xs font-bold tracking-widest uppercase block">Our Standard</span>
                     <h2 className="text-2xl md:text-3xl font-black tracking-tight uppercase">TOUR-HARDENED. ROAD-READY.</h2>
-                    <p className="text-gray-400 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed font-medium">
+                    <p className="max-w-2xl mx-auto text-sm leading-relaxed font-medium text-gray-400">
                         Our lead cars are proper mountain road and tour mileage pace setters. Fast, agile and hard to miss. In addition to our epic lead cars we have our G81 LCI M3 Touring providing the ultimate backup should anyone need unforeseen assistance on tour.
                     </p>
                 </div>
