@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function RegisterInterestPanel({ tour, mobile = false }) {
   const [showMobileBar, setShowMobileBar] = useState(false);
+  const { pathname } = useLocation();
+  const isContactPage = pathname === '/contact';
 
   useEffect(() => {
-    if (!mobile) return undefined;
+    if (!mobile || isContactPage) return undefined;
 
     const hero = document.querySelector('[data-tour-hero]');
     if (!hero) {
@@ -20,9 +22,9 @@ export default function RegisterInterestPanel({ tour, mobile = false }) {
     );
     observer.observe(hero);
     return () => observer.disconnect();
-  }, [mobile]);
+  }, [isContactPage, mobile]);
 
-  if (mobile && !showMobileBar) return null;
+  if (mobile && (isContactPage || !showMobileBar)) return null;
 
   if (mobile) {
     return (
