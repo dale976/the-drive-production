@@ -27,7 +27,7 @@ export default function JourneyOverview({ days }) {
   }, [days]);
 
   return (
-    <section className="overflow-hidden border-y border-white/10 bg-[#11171b] px-6 py-16 text-white md:py-20" aria-labelledby="journey-overview-heading">
+    <section className="hidden overflow-hidden border-y border-white/10 bg-[#11171b] px-6 py-20 text-white md:block" aria-labelledby="journey-overview-heading">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
@@ -43,9 +43,9 @@ export default function JourneyOverview({ days }) {
           </p>
         </div>
 
-        <ol className="mt-10 flex snap-x snap-mandatory overflow-x-auto border-y border-white/10 md:grid md:grid-cols-5 md:overflow-visible">
+        <ol className="mt-10 grid grid-cols-5 border-y border-white/10">
           {days.map((day) => (
-            <li key={day.number} className="min-w-[76%] snap-start border-r border-white/10 sm:min-w-[46%] md:min-w-0">
+            <li key={day.number} className="border-r border-white/10">
               <a
                 href={`#day-${day.number}`}
                 aria-current={activeDay === day.number ? 'location' : undefined}

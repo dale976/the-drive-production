@@ -26,7 +26,7 @@ const tourSchema = {
   },
   offers: {
     '@type': 'Offer',
-    price: '2495',
+    price: String(alpineGtTour.price.totalPence / 100),
     priceCurrency: 'GBP',
     description: 'Total price based on 2 people sharing',
     url: 'https://thedrivetouringcompany.com/contact',

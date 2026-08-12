@@ -15,8 +15,8 @@ export const alpineGtTour = {
   description:
     "A grand touring journey that begins with the sweep of the Black Forest, climbs into Switzerland's most celebrated mountain passes, and unwinds among the vineyards and old stone of Burgundy.",
   price: {
-    totalPence: 249500,
-    display: '£2495',
+    totalPence: 259500,
+    display: '£2595',
     basis: 'Based on 2 people sharing',
   },
   images: {
@@ -62,15 +62,15 @@ export const alpineGtTour = {
         'A full day focused on the strongest roads of the Southern Black Forest before crossing into Switzerland and arriving beside Lake Lucerne.',
       headline: 'Forest rhythm, then a lakeside reset',
       overview:
-        'Long, flowing sections draw the best from the Southern Black Forest, with changing elevation and a measured pace throughout. By late afternoon the landscape opens toward Lake Lucerne and a composed arrival at HERMITAGE.',
+        'Long, flowing sections draw the best from the Southern Black Forest, with changing elevation and a measured pace throughout. By late afternoon the landscape opens toward Lake Lucerne and a composed arrival at Campus Hotel Hertenstein.',
       routeOverview:
         'The High Black Forest via Titisee, Schluchsee, St. Blasien, and the southern forest roads, then across to Lake Lucerne.',
       highlights: [
         'The strongest Southern Black Forest roads',
         'A gradual change from woodland to Alpine lake',
-        'A lakeside evening at HERMITAGE',
+        'A lakeside evening at Campus Hotel Hertenstein',
       ],
-      overnight: 'HERMITAGE Lake Lucerne',
+      overnight: 'Campus Hotel Hertenstein',
       hero: false,
       passes: [],
     },
@@ -84,15 +84,15 @@ export const alpineGtTour = {
         'The hero day: an uncompromised loop joining Furka, Grimsel, and Susten—the roads this journey was built around.',
       headline: 'Three high roads, one defining day',
       overview:
-        'This is the uncompromised centrepiece: a rare, expertly paced circuit of Switzerland’s great high roads. Glacier scenery, fast-changing light, and the return to the calm of Lake Lucerne give the day its lasting shape.',
+        'This is the uncompromised centrepiece: a rare, expertly paced circuit of Switzerland’s great high roads. Glacier scenery, fast-changing light, and the return to the calm of Hertenstein give the day its lasting shape.',
       routeOverview:
-        'Lake Lucerne to Andermatt, then Furka, Grimsel, and Susten before returning to Weggis.',
+        'Lake Lucerne to Andermatt, then Furka, Grimsel, and Susten before returning to Hertenstein.',
       highlights: [
         'A complete Furka, Grimsel, and Susten circuit',
         'High-altitude driving framed by glacier scenery',
-        'A restorative return to Lake Lucerne',
+        'A restorative return to Hertenstein',
       ],
-      overnight: 'HERMITAGE Lake Lucerne',
+      overnight: 'Campus Hotel Hertenstein',
       hero: true,
       passes: ['Furka Pass', 'Grimsel Pass', 'Susten Pass'],
     },
@@ -152,13 +152,13 @@ export const alpineGtTour = {
       nights: 'Night 1',
     },
     {
-      name: 'HERMITAGE Lake Lucerne',
-      region: 'Weggis · Switzerland',
-      website: 'https://www.hermitage.ch/en',
-      image: new URL('../assets/hermitage-lake-lucerne.webp', import.meta.url).href,
-      alt: 'HERMITAGE hotel beside Lake Lucerne with Alpine views',
+      name: 'Campus Hotel Hertenstein',
+      region: 'Hertenstein · Lake Lucerne',
+      website: 'https://www.campus-hotel-hertenstein.ch/en/',
+      image: new URL('../assets/campus-hotel-hertenstein.webp', import.meta.url).href,
+      alt: 'Campus Hotel Hertenstein on the shore of Lake Lucerne',
       description:
-        "A calm lakeside base for two nights and the perfect counterpoint to Switzerland's greatest driving roads.",
+        'A contemporary lakeside retreat on the Hertenstein peninsula, combining direct lake access, modern rooms, dining, and restorative wellness for our two-night Swiss stay.',
       nights: 'Nights 2–3',
     },
     {
