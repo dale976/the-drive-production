@@ -75,8 +75,14 @@ test('Alpine GT package details are complete', () => {
 test('Alpine GT uses all three official hotels', () => {
   assert.deepEqual(
     alpineGtTour.hotels.map(({ name }) => name),
-    ['Parkhotel Adler', 'HERMITAGE Lake Lucerne', 'Château de Chailly'],
+    ['Parkhotel Adler', 'Campus Hotel Hertenstein', 'Château de Chailly'],
   );
+  assert.equal(
+    alpineGtTour.hotels[1].website,
+    'https://www.campus-hotel-hertenstein.ch/en/',
+  );
+  assert.equal(alpineGtTour.hotels[1].nights, 'Nights 2–3');
+  assert.match(alpineGtTour.hotels[1].image, /campus-hotel-hertenstein/);
   assert.ok(alpineGtTour.hotels.every(({ website }) => website.startsWith('https://')));
 });
 
