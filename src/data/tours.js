@@ -15,8 +15,8 @@ export const alpineGtTour = {
   description:
     "A grand touring journey that begins with the sweep of the Black Forest, climbs into Switzerland's most celebrated mountain passes, and unwinds among the vineyards and old stone of Burgundy.",
   price: {
-    totalPence: 249500,
-    display: '£2495',
+    totalPence: 259500,
+    display: '£2595',
     basis: 'Based on 2 people sharing',
   },
   images: {

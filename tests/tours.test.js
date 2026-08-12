@@ -6,8 +6,8 @@ test('Alpine GT exposes the public paths and exact pricing basis', () => {
   assert.equal(alpineGtTour.slug, 'alpine-gt-2027');
   assert.equal(alpineGtTour.path, '/tours/alpine-gt-2027');
   assert.equal(alpineGtTour.registerPath, '/contact');
-  assert.equal(alpineGtTour.price.totalPence, 249500);
-  assert.equal(alpineGtTour.price.display, '£2495');
+  assert.equal(alpineGtTour.price.totalPence, 259500);
+  assert.equal(alpineGtTour.price.display, '£2595');
   assert.equal(
     alpineGtTour.price.basis,
     'Based on 2 people sharing',
