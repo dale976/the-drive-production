@@ -41,3 +41,28 @@ test('homepage places the Life on tour story between operations and founders', a
   assert.match(lifeOnTour, /tour-life-group\.webp/);
   assert.equal((lifeOnTour.match(/loading="lazy"/g) ?? []).length, 3);
 });
+
+test('itinerary renders one lazy previous-tour figure from each day', async () => {
+  const source = await readFile(
+    new URL('../src/components/tours/ItineraryDay.jsx', import.meta.url),
+    'utf8',
+  );
+
+  assert.match(source, /src=\{day\.image\.src\}/);
+  assert.match(source, /alt=\{day\.image\.alt\}/);
+  assert.match(source, /width=\{day\.image\.width\}/);
+  assert.match(source, /height=\{day\.image\.height\}/);
+  assert.match(source, /loading="lazy"/);
+  assert.match(source, /From a previous Drive tour/);
+  assert.match(source, /day\.hero/);
+});
+
+test('hotel presentation does not expose an external website CTA', async () => {
+  const source = await readFile(
+    new URL('../src/components/tours/HotelFeature.jsx', import.meta.url),
+    'utf8',
+  );
+
+  assert.doesNotMatch(source, /Explore the hotel|ExternalLink|href=\{hotel\.website\}/);
+  assert.ok(alpineGtTour.hotels.every(({ website }) => website.startsWith('https://')));
+});

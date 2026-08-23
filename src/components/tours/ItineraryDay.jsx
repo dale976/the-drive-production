@@ -55,6 +55,30 @@ export default function ItineraryDay({ day, align = 'left', hotel = null, revers
             {day.overview}
           </p>
 
+          <figure className={`relative mt-12 overflow-hidden bg-brandGray ${
+            day.hero
+              ? 'aspect-[16/9] md:-mx-8 lg:-mx-16'
+              : day.number % 2 === 0
+                ? 'aspect-[16/10] md:ml-12'
+                : 'aspect-[16/10] md:mr-12'
+          }`}>
+            <img
+              src={day.image.src}
+              alt={day.image.alt}
+              width={day.image.width}
+              height={day.image.height}
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 to-transparent"
+            />
+            <figcaption className="absolute bottom-4 left-4 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white md:bottom-5 md:left-5">
+              From a previous Drive tour
+            </figcaption>
+          </figure>
+
           <div className="mt-12 grid gap-8 border-t border-white/15 pt-8 md:grid-cols-[1.2fr_0.8fr]">
             <div>
               <h4 className="text-[0.7rem] font-bold uppercase tracking-[0.25em] text-brandTeal">

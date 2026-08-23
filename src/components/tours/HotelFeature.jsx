@@ -1,5 +1,3 @@
-import { ExternalLink } from 'lucide-react';
-
 export default function HotelFeature({ hotel, reverse = false, dayNumber }) {
   return (
     <section aria-label={`${hotel.name} accommodation`} className="mx-auto mt-16 max-w-7xl text-white md:mt-24">
@@ -35,16 +33,6 @@ export default function HotelFeature({ hotel, reverse = false, dayNumber }) {
           <p className="relative mt-7 max-w-xl text-base leading-7 text-gray-300">
             {hotel.description}
           </p>
-          <a
-            href={hotel.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative mt-8 inline-flex min-h-11 w-fit items-center gap-2 border-b border-brandTeal py-2 text-sm font-bold uppercase tracking-[0.14em] text-white transition-colors hover:text-brandTeal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal"
-          >
-            Explore the hotel
-            <ExternalLink aria-hidden="true" className="h-4 w-4 shrink-0" />
-            <span className="sr-only">: {hotel.name} official website</span>
-          </a>
         </div>
       </div>
     </section>
