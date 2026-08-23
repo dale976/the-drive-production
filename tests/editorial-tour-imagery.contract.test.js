@@ -20,6 +20,11 @@ test('every Alpine GT chapter has factual previous-tour imagery metadata', () =>
     assert.ok(Number.isInteger(image.width) && image.width > 0);
     assert.ok(Number.isInteger(image.height) && image.height > 0);
   }
+
+  assert.deepEqual(
+    alpineGtTour.days.map(({ image }) => image.layout),
+    ['left', 'right', 'hero', 'left', 'quiet'],
+  );
 });
 
 test('homepage places the Life on tour story between operations and founders', async () => {
@@ -57,7 +62,8 @@ test('itinerary renders one lazy previous-tour figure from each day', async () =
   assert.match(source, /height=\{day\.image\.height\}/);
   assert.match(source, /loading="lazy"/);
   assert.match(source, /From a previous Drive tour/);
-  assert.match(source, /day\.hero/);
+  assert.match(source, /imageLayoutStyles\[day\.image\.layout\]/);
+  assert.doesNotMatch(source, /day\.number % 2/);
 });
 
 test('hotel presentation does not expose an external website CTA', async () => {

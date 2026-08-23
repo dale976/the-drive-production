@@ -56,6 +56,7 @@ export const alpineGtTour = {
         alt: 'A convoy of sports cars passing the grandstand at a historic French road circuit',
         width: 640,
         height: 480,
+        layout: 'left',
       },
     },
     {
@@ -84,6 +85,7 @@ export const alpineGtTour = {
         alt: 'A white Porsche 911 paused on a quiet country road beneath a wide sky',
         width: 640,
         height: 427,
+        layout: 'right',
       },
     },
     {
@@ -112,6 +114,7 @@ export const alpineGtTour = {
         alt: 'A silver Porsche 911 overlooking a snow-capped Alpine valley',
         width: 640,
         height: 480,
+        layout: 'hero',
       },
     },
     {
@@ -140,6 +143,7 @@ export const alpineGtTour = {
         alt: 'A boat crossing calm blue water with a lakeside town and hills beyond',
         width: 1800,
         height: 1200,
+        layout: 'left',
       },
     },
     {
@@ -167,6 +171,7 @@ export const alpineGtTour = {
         alt: 'Two tour guests relaxing in armchairs and talking at the end of the day',
         width: 1800,
         height: 1200,
+        layout: 'quiet',
       },
     },
   ],

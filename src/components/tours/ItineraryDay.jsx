@@ -8,6 +8,13 @@ const chapterStyles = {
   5: 'bg-brandDark',
 };
 
+const imageLayoutStyles = {
+  left: 'aspect-[16/10] md:mr-12',
+  right: 'aspect-[16/10] md:ml-12',
+  hero: 'aspect-[16/9] md:-mx-8 lg:-mx-16',
+  quiet: 'aspect-[3/2] md:mx-auto md:max-w-2xl',
+};
+
 export default function ItineraryDay({ day, align = 'left', hotel = null, reverseHotel = false }) {
   const contentPlacement = align === 'right'
     ? 'lg:col-span-8 lg:col-start-5'
@@ -56,11 +63,7 @@ export default function ItineraryDay({ day, align = 'left', hotel = null, revers
           </p>
 
           <figure className={`relative mt-12 overflow-hidden bg-brandGray ${
-            day.hero
-              ? 'aspect-[16/9] md:-mx-8 lg:-mx-16'
-              : day.number % 2 === 0
-                ? 'aspect-[16/10] md:ml-12'
-                : 'aspect-[16/10] md:mr-12'
+            imageLayoutStyles[day.image.layout]
           }`}>
             <img
               src={day.image.src}
