@@ -25,7 +25,7 @@ export default function LifeOnTour() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-2 md:gap-5">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-[15rem_15rem] md:gap-5">
           <figure className="aspect-[16/10] overflow-hidden bg-brandGray md:col-span-8 md:row-span-2">
             <img
               src={drivingImage}
