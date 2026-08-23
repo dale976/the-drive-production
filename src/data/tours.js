@@ -51,6 +51,12 @@ export const alpineGtTour = {
       overnight: 'Parkhotel Adler',
       hero: false,
       passes: [],
+      image: {
+        src: new URL('../assets/tour-day-1-departure.webp', import.meta.url).href,
+        alt: 'A convoy of sports cars passing the grandstand at a historic French road circuit',
+        width: 640,
+        height: 480,
+      },
     },
     {
       number: 2,
@@ -73,6 +79,12 @@ export const alpineGtTour = {
       overnight: 'Campus Hotel Hertenstein',
       hero: false,
       passes: [],
+      image: {
+        src: new URL('../assets/tour-day-2-country-road.webp', import.meta.url).href,
+        alt: 'A white Porsche 911 paused on a quiet country road beneath a wide sky',
+        width: 640,
+        height: 427,
+      },
     },
     {
       number: 3,
@@ -95,6 +107,12 @@ export const alpineGtTour = {
       overnight: 'Campus Hotel Hertenstein',
       hero: true,
       passes: ['Furka Pass', 'Grimsel Pass', 'Susten Pass'],
+      image: {
+        src: new URL('../assets/tour-day-3-alpine-pass.webp', import.meta.url).href,
+        alt: 'A silver Porsche 911 overlooking a snow-capped Alpine valley',
+        width: 640,
+        height: 480,
+      },
     },
     {
       number: 4,
@@ -117,6 +135,12 @@ export const alpineGtTour = {
       overnight: 'Château de Chailly',
       hero: false,
       passes: ['Brünig Pass'],
+      image: {
+        src: new URL('../assets/tour-day-4-lake.webp', import.meta.url).href,
+        alt: 'A boat crossing calm blue water with a lakeside town and hills beyond',
+        width: 1800,
+        height: 1200,
+      },
     },
     {
       number: 5,
@@ -138,6 +162,12 @@ export const alpineGtTour = {
       overnight: 'Homeward',
       hero: false,
       passes: [],
+      image: {
+        src: new URL('../assets/tour-day-5-reflection.webp', import.meta.url).href,
+        alt: 'Two tour guests relaxing in armchairs and talking at the end of the day',
+        width: 1800,
+        height: 1200,
+      },
     },
   ],
   hotels: [
