@@ -41,6 +41,8 @@ test('homepage places the Life on tour story between operations and founders', a
   assert.match(lifeOnTour, /tour-life-group\.webp/);
   assert.equal((lifeOnTour.match(/loading="lazy"/g) ?? []).length, 3);
   assert.match(lifeOnTour, /md:grid-rows-\[15rem_15rem\]/);
+  assert.match(lifeOnTour, /mx-auto mb-10 max-w-2xl text-center/);
+  assert.match(lifeOnTour, /mt-5 text-center text-\[0\.7rem\]/);
 });
 
 test('itinerary renders one lazy previous-tour figure from each day', async () => {

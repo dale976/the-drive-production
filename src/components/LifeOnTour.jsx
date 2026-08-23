@@ -9,7 +9,7 @@ export default function LifeOnTour() {
       className="overflow-hidden border-y border-white/10 bg-brandDark py-20 md:py-28"
     >
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10 max-w-2xl md:mb-14">
+        <div className="mx-auto mb-10 max-w-2xl text-center md:mb-14">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-brandTeal">
             On the road together
           </p>
@@ -19,7 +19,7 @@ export default function LifeOnTour() {
           >
             Life on tour
           </h2>
-          <p className="mt-5 max-w-xl text-base leading-7 text-gray-300">
+          <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-gray-300">
             The road is only part of the story. Shared miles, unhurried evenings and the
             people around you turn a great drive into something lasting.
           </p>
@@ -60,7 +60,7 @@ export default function LifeOnTour() {
           </figure>
         </div>
 
-        <p className="mt-5 text-[0.7rem] font-bold uppercase tracking-[0.22em] text-gray-500">
+        <p className="mt-5 text-center text-[0.7rem] font-bold uppercase tracking-[0.22em] text-gray-500">
           Moments from previous Drive tours
         </p>
       </div>
