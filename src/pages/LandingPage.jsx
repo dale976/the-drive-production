@@ -1,9 +1,11 @@
 import {Compass, Hotel, Users} from 'lucide-react';
 import {Link} from 'react-router-dom';
 import wet911 from '../assets/exige_edit.jpg';
+import foundersDriving from '../assets/founders-driving.webp';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
 import PageMeta from '../components/PageMeta.jsx';
+import LifeOnTour from '../components/LifeOnTour.jsx';
 
 const organizationSchema = {
     '@context': 'https://schema.org',
@@ -209,55 +211,60 @@ export default function LandingPage({activePage = 'home'}) {
                 </div>
             </section>
 
-            {/* TEAM */}
-            <section id="team" className="py-24 bg-brandGray/20 border-y border-gray-800">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="mb-16 text-center">
-                        <span className="text-brandTeal text-xs font-bold tracking-widest uppercase block mb-2">The Organizers</span>
-                        <h2 className="text-3xl font-black tracking-tight uppercase">DRIVEN WITH EXPERIENCE</h2>
-                    </div>
+            <LifeOnTour />
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto">
-                        {/* Member 1 */}
-                        <div
-                            className="border border-gray-800 bg-brandDark/80 group hover:border-brandTeal/30 transition-all duration-300">
-                            <div
-                                className="h-72 overflow-hidden relative bg-brandGray/60 flex flex-col items-center justify-center gap-4">
-                                <span
-                                    style={{fontFamily: 'RoadRage, sans-serif'}}
-                                    className="text-7xl text-brandTeal/60 group-hover:text-brandTeal group-hover:scale-110 transition-all duration-500 select-none"
-                                >
-                                    LH
-                                </span>
-                                <span
-                                    className="text-xs text-gray-500 font-bold tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">Creative & Experience Design</span>
-                            </div>
-                            <div className="p-6 space-y-1 border-t border-gray-800 text-center">
-                                {/*<span className="text-[10px] text-brandTeal font-bold uppercase tracking-widest">Lord Business</span>*/}
-                                <h3 className="text-base font-black tracking-wide text-white uppercase">Lewis
-                                    Harvey</h3>
-                            </div>
+            {/* FOUNDERS */}
+            <section id="team" className="overflow-hidden border-y border-gray-800 bg-brandGray/20 py-24">
+                <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-12 lg:gap-16">
+                    <figure className="relative mx-auto w-full max-w-md lg:col-span-5 lg:mx-0">
+                        <div aria-hidden="true"
+                             className="absolute -left-4 -top-4 h-24 w-24 border-l-2 border-t-2 border-brandTeal md:-left-6 md:-top-6"/>
+                        <div className="relative aspect-[3/4] overflow-hidden bg-brandDark">
+                            <img
+                                src={foundersDriving}
+                                alt="Lewis and Alan enjoying a drive together"
+                                width="480"
+                                height="640"
+                                loading="lazy"
+                                className="h-full w-full object-cover"
+                            />
+                            <div aria-hidden="true"
+                                 className="absolute inset-0 bg-gradient-to-t from-brandDark/55 via-transparent to-transparent"/>
+                            <figcaption
+                                className="absolute bottom-5 left-5 text-xs font-bold uppercase tracking-[0.2em] text-white">
+                                Lewis &amp; Alan
+                            </figcaption>
+                        </div>
+                    </figure>
+
+                    <div className="lg:col-span-7 lg:py-8">
+                        <span className="block text-xs font-bold uppercase tracking-[0.28em] text-brandTeal">
+                            The organisers
+                        </span>
+                        <h2 className="mt-4 max-w-3xl text-3xl font-black uppercase leading-[0.95] tracking-tight md:text-5xl">
+                            Built from friendship. Driven by a shared obsession.
+                        </h2>
+
+                        <div className="mt-8 max-w-2xl space-y-6 text-base font-medium leading-8 text-gray-300">
+                            <p>
+                                We’re Lewis and Alan—friends for more than two decades, united by a lifelong love of
+                                cars and the freedom of a great road. Over the past three years, we’ve planned and
+                                hosted private driving tours, refining every detail through experience: the roads, the
+                                pace, the places we stay and the way a group comes together over the course of a
+                                journey.
+                            </p>
+                            <p>
+                                The Drive Touring Company grew from a desire to share that experience more widely. We
+                                bring people together through a common passion, creating tours where friendships form
+                                naturally and the pleasure of driving remains at the heart of every day. Each journey
+                                is built around roads with rhythm, thoughtful places to pause and moments that stay
+                                with you long after the engines fall silent.
+                            </p>
                         </div>
 
-                        {/* Member 2 */}
-                        <div
-                            className="border border-gray-800 bg-brandDark/80 group hover:border-brandTeal/30 transition-all duration-300">
-                            <div
-                                className="h-72 overflow-hidden relative bg-brandGray/60 flex flex-col items-center justify-center gap-4">
-                                <span
-                                    style={{fontFamily: 'RoadRage, sans-serif'}}
-                                    className="text-7xl text-brandTeal/60 group-hover:text-brandTeal group-hover:scale-110 transition-all duration-500 select-none"
-                                >
-                                    AD
-                                </span>
-                                <span
-                                    className="text-xs text-gray-500 font-bold tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">Routes & Logistics</span>
-                            </div>
-                            <div className="p-6 space-y-1 border-t border-gray-800 text-center">
-                                {/*<span className="text-[10px] text-brandTeal font-bold uppercase tracking-widest">Head of Exploration</span>*/}
-                                <h3 className="text-base font-black tracking-wide text-white uppercase">Alan Dale</h3>
-                            </div>
-                        </div>
+                        <p className="mt-10 border-l-2 border-brandTeal pl-5 text-sm font-black uppercase tracking-[0.16em] text-white md:text-base">
+                            Great roads. Remarkable cars. Good company.
+                        </p>
                     </div>
                 </div>
             </section>

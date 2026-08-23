@@ -8,6 +8,13 @@ const chapterStyles = {
   5: 'bg-brandDark',
 };
 
+const imageLayoutStyles = {
+  left: 'aspect-[16/10] md:mr-12',
+  right: 'aspect-[16/10] md:ml-12',
+  hero: 'aspect-[16/9] md:-mx-8 lg:-mx-16',
+  quiet: 'aspect-[3/2] md:mx-auto md:max-w-2xl',
+};
+
 export default function ItineraryDay({ day, align = 'left', hotel = null, reverseHotel = false }) {
   const contentPlacement = align === 'right'
     ? 'lg:col-span-8 lg:col-start-5'
@@ -54,6 +61,26 @@ export default function ItineraryDay({ day, align = 'left', hotel = null, revers
           <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-300">
             {day.overview}
           </p>
+
+          <figure className={`relative mt-12 overflow-hidden bg-brandGray ${
+            imageLayoutStyles[day.image.layout]
+          }`}>
+            <img
+              src={day.image.src}
+              alt={day.image.alt}
+              width={day.image.width}
+              height={day.image.height}
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 to-transparent"
+            />
+            <figcaption className="absolute bottom-4 left-4 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white md:bottom-5 md:left-5">
+              From a previous Drive tour
+            </figcaption>
+          </figure>
 
           <div className="mt-12 grid gap-8 border-t border-white/15 pt-8 md:grid-cols-[1.2fr_0.8fr]">
             <div>
