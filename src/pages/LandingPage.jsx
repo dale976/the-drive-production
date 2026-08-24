@@ -86,9 +86,9 @@ export default function LandingPage({activePage = 'home'}) {
                     className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:50px_50px]"/>
 
                 <div className="relative z-10 text-center max-w-5xl px-6 space-y-8">
-                    <h1 className="text-5xl md:text-8xl font-black tracking-tighter leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)]">
+                    <h1 className="text-[clamp(2.15rem,10.5vw,5rem)] md:text-8xl font-black tracking-tighter leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)]">
                         DRIVE THE <br/>
-                        <span className="bg-clip-text text-brandTeal italic font-black pr-4">
+                        <span className="bg-clip-text text-brandTeal italic font-black">
               EXTRAORDINARY
             </span>
                     </h1>
