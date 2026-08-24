@@ -111,10 +111,6 @@ export default function LandingPage({activePage = 'home'}) {
                         </Link>
                     </div>
 
-                    <div
-                        className="inline-flex items-center gap-2 border border-cyan-400/30 bg-brandDark/80 backdrop-blur-md px-5 py-2 text-[11px] font-bold tracking-[0.25em] text-cyan-400 uppercase">
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"/> ALPINE GT 2027 · REGISTER INTEREST NOW
-                    </div>
                 </div>
             </header>
 
