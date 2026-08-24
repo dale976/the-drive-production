@@ -25,6 +25,30 @@ test('every Alpine GT chapter has factual previous-tour imagery metadata', () =>
     alpineGtTour.days.map(({ image }) => image.layout),
     ['left', 'right', 'hero', 'left', 'quiet'],
   );
+
+  assert.deepEqual(alpineGtTour.days[0].image, {
+    src: alpineGtTour.days[0].image.src,
+    alt: 'A blue Lotus Exige parked beside the painted grandstand at a historic French circuit',
+    width: 1800,
+    height: 1012,
+    layout: 'left',
+  });
+
+  assert.deepEqual(alpineGtTour.days[3].image, {
+    src: alpineGtTour.days[3].image.src,
+    alt: 'A red Toyota Supra sweeping through open countryside on a previous Drive tour',
+    width: 1800,
+    height: 1200,
+    layout: 'left',
+  });
+
+  assert.deepEqual(alpineGtTour.days[4].image, {
+    src: alpineGtTour.days[4].image.src,
+    alt: 'A purple Porsche 911 GT3 RS driving home on a wet road beneath dark skies',
+    width: 1800,
+    height: 1200,
+    layout: 'quiet',
+  });
 });
 
 test('homepage places the Life on tour story between operations and founders', async () => {
@@ -74,4 +98,8 @@ test('hotel presentation does not expose an external website CTA', async () => {
 
   assert.doesNotMatch(source, /Explore the hotel|ExternalLink|href=\{hotel\.website\}/);
   assert.ok(alpineGtTour.hotels.every(({ website }) => website.startsWith('https://')));
+  assert.equal(
+    alpineGtTour.hotels[2].alt,
+    'A purple Porsche 911 GT3 RS parked outside Château de Chailly in Burgundy',
+  );
 });
