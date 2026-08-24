@@ -53,9 +53,9 @@ export const alpineGtTour = {
       passes: [],
       image: {
         src: new URL('../assets/tour-day-1-departure.webp', import.meta.url).href,
-        alt: 'A convoy of sports cars passing the grandstand at a historic French road circuit',
-        width: 640,
-        height: 480,
+        alt: 'A blue Lotus Exige parked beside the painted grandstand at a historic French circuit',
+        width: 1800,
+        height: 1012,
         layout: 'left',
       },
     },
@@ -140,7 +140,7 @@ export const alpineGtTour = {
       passes: ['Brünig Pass'],
       image: {
         src: new URL('../assets/tour-day-4-lake.webp', import.meta.url).href,
-        alt: 'A boat crossing calm blue water with a lakeside town and hills beyond',
+        alt: 'A red Toyota Supra sweeping through open countryside on a previous Drive tour',
         width: 1800,
         height: 1200,
         layout: 'left',
@@ -168,7 +168,7 @@ export const alpineGtTour = {
       passes: [],
       image: {
         src: new URL('../assets/tour-day-5-reflection.webp', import.meta.url).href,
-        alt: 'Two tour guests relaxing in armchairs and talking at the end of the day',
+        alt: 'A purple Porsche 911 GT3 RS driving home on a wet road beneath dark skies',
         width: 1800,
         height: 1200,
         layout: 'quiet',
@@ -201,7 +201,7 @@ export const alpineGtTour = {
       region: 'Burgundy · France',
       website: 'https://www.chailly.com/',
       image: new URL('../assets/chateau-de-chailly-courtyard.webp', import.meta.url).href,
-      alt: 'Historic Château de Chailly and its inner courtyard in Burgundy',
+      alt: 'A purple Porsche 911 GT3 RS parked outside Château de Chailly in Burgundy',
       description:
         'A historic château finale shaped around Burgundy hospitality, gastronomy, wellness, and a car-rally-friendly courtyard.',
       nights: 'Night 4',
