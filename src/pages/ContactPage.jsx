@@ -71,19 +71,12 @@ export default function ContactPage() {
                 Tell us about your car and anything you would like to know. Our team will personally follow up about The Alpine GT 2027.
               </p>
 
-              <dl className="mt-12 grid grid-cols-2 gap-px border border-white/10 bg-white/10">
+              <dl className="mt-12 max-w-sm border border-white/10 bg-white/10">
                 <div className="bg-brandDark p-5">
                   <dt className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-gray-500">Dates</dt>
                   <dd className="mt-2 text-sm font-bold uppercase">{alpineGtTour.date}</dd>
                 </div>
-                <div className="bg-brandDark p-5">
-                  <dt className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-gray-500">Price</dt>
-                  <dd className="mt-2 text-sm font-bold uppercase">{alpineGtTour.price.display}</dd>
-                </div>
               </dl>
-              <p className="mt-3 text-xs uppercase tracking-[0.14em] text-gray-500">
-                {alpineGtTour.price.basis}
-              </p>
 
               <Link
                 to={alpineGtTour.path}

@@ -1,18 +1,14 @@
 import { Check, Minus } from 'lucide-react';
 
-export default function PackageDetails({ price, included, excluded, caveat }) {
+export default function PackageDetails({ included, excluded, caveat }) {
   return (
     <section id="included" className="scroll-mt-40 bg-brandDark px-6 py-24 text-white" aria-labelledby="package-details-heading">
       <div className="mx-auto max-w-7xl">
         <p className="text-xs font-bold uppercase tracking-[0.3em] text-brandTeal">The package</p>
-        <div className="mt-4 flex flex-col gap-3 border-b border-white/10 pb-10 md:flex-row md:items-end md:justify-between">
+        <div className="mt-4 border-b border-white/10 pb-10">
           <h2 id="package-details-heading" className="text-4xl font-black uppercase tracking-tight md:text-6xl">
             Package details
           </h2>
-          <div className="md:text-right">
-            <p className="text-4xl font-black tracking-tight text-brandTeal md:text-5xl">{price.display}</p>
-            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-gray-400">{price.basis}</p>
-          </div>
         </div>
 
         <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-16">

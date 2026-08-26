@@ -14,11 +14,6 @@ export const alpineGtTour = {
   tagline: 'HIGH-ALTITUDE HAIRPINS & PREMIUM VENUES',
   description:
     "A grand touring journey that begins with the sweep of the Black Forest, climbs into Switzerland's most celebrated mountain passes, and unwinds among the vineyards and old stone of Burgundy.",
-  price: {
-    totalPence: 259500,
-    display: '£2595',
-    basis: 'Based on 2 people sharing',
-  },
   images: {
     hero: new URL('../assets/alpine-road-hero.jpg', import.meta.url).href,
     listing: new URL('../assets/fez_alpine.jpg', import.meta.url).href,
