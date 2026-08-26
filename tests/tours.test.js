@@ -2,16 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { alpineGtTour, getTourBySlug } from '../src/data/tours.js';
 
-test('Alpine GT exposes the public paths and exact pricing basis', () => {
+test('Alpine GT exposes public paths without publishing a price', () => {
   assert.equal(alpineGtTour.slug, 'alpine-gt-2027');
   assert.equal(alpineGtTour.path, '/tours/alpine-gt-2027');
   assert.equal(alpineGtTour.registerPath, '/contact');
-  assert.equal(alpineGtTour.price.totalPence, 259500);
-  assert.equal(alpineGtTour.price.display, '£2595');
-  assert.equal(
-    alpineGtTour.price.basis,
-    'Based on 2 people sharing',
-  );
+  assert.equal('price' in alpineGtTour, false);
 });
 
 test('Alpine GT contains the approved five-day journey', () => {

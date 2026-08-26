@@ -24,13 +24,6 @@ const tourSchema = {
     name: 'The Drive Touring Company',
     url: 'https://thedrivetouringcompany.com/',
   },
-  offers: {
-    '@type': 'Offer',
-    price: String(alpineGtTour.price.totalPence / 100),
-    priceCurrency: 'GBP',
-    description: 'Total price based on 2 people sharing',
-    url: 'https://thedrivetouringcompany.com/contact',
-  },
   itinerary: {
     '@type': 'ItemList',
     numberOfItems: alpineGtTour.days.length,
@@ -107,7 +100,6 @@ export default function TourDetailPage() {
         </section>
 
         <PackageDetails
-          price={tour.price}
           included={tour.included}
           excluded={tour.excluded}
           caveat={tour.caveat}

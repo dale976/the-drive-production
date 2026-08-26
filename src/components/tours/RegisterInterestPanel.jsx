@@ -31,8 +31,8 @@ export default function RegisterInterestPanel({ tour, mobile = false }) {
       <aside className="fixed inset-x-0 bottom-0 z-40 border-t border-brandTeal/40 bg-brandDark/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] text-white shadow-[0_-12px_35px_rgba(0,0,0,0.4)] backdrop-blur-md md:hidden" aria-label="Register interest">
         <div className="mx-auto flex max-w-lg items-center justify-between gap-3">
           <div className="min-w-0">
-            <p className="text-lg font-black leading-none text-brandTeal">{tour.price.display}</p>
-            <p className="mt-1 truncate text-[0.7rem] font-semibold uppercase tracking-wide text-gray-400">For two guests</p>
+            <p className="truncate text-sm font-black uppercase leading-none text-brandTeal">{tour.shortTitle}</p>
+            <p className="mt-1 truncate text-[0.7rem] font-semibold uppercase tracking-wide text-gray-400">{tour.date}</p>
           </div>
           <Link
             to={tour.registerPath}
@@ -53,8 +53,6 @@ export default function RegisterInterestPanel({ tour, mobile = false }) {
           <h2 id="register-interest-heading" className="mt-4 max-w-4xl text-4xl font-black uppercase leading-none tracking-tight md:text-7xl">
             {tour.shortTitle}
           </h2>
-          <p className="mt-6 text-3xl font-black tracking-tight">{tour.price.display}</p>
-          <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] opacity-75">{tour.price.basis}</p>
         </div>
         <Link
           to="/contact"

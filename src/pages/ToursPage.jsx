@@ -97,7 +97,7 @@ export default function ToursPage({ activePage = 'tours' }) {
                         </div>
 
                         {/* Metrics */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 border-y border-gray-800 bg-brandDark/30 px-4">
+                        <div className="grid grid-cols-1 gap-4 border-y border-gray-800 bg-brandDark/30 px-4 py-4 sm:grid-cols-3">
                             <div className="space-y-0.5">
                                 <span className="text-[0.7rem] text-gray-500 font-bold tracking-widest block uppercase">DURATION</span>
                                 <div className="flex items-center gap-1.5 text-sm font-black text-gray-200">
@@ -117,13 +117,6 @@ export default function ToursPage({ activePage = 'tours' }) {
                                 <div className="flex items-center gap-1.5 text-sm font-black text-gray-200">
                                     <Users className="w-3.5 h-3.5 text-brandTeal/70" strokeWidth={2} />
                                     <span>{tour.groupSize}</span>
-                                </div>
-                            </div>
-                            <div className="space-y-0.5">
-                                <span className="text-[0.7rem] text-gray-500 font-bold tracking-widest block uppercase">PRICE</span>
-                                <div className="text-sm font-black text-brandTeal">
-                                    <span className="block">{tour.price.display}</span>
-                                    <span className="mt-1 block text-[0.7rem] leading-4 tracking-widest text-gray-500">BASED ON 2 PEOPLE SHARING</span>
                                 </div>
                             </div>
                         </div>

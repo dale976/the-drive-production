@@ -6,7 +6,6 @@ export default function TourHero({ tour }) {
     { label: 'Accommodation', value: tour.nights },
     { label: 'Distance', value: tour.distance },
     { label: 'Group size', value: tour.groupSize },
-    { label: 'Price', value: `${tour.price.display}*` },
   ];
 
   return (
@@ -53,13 +52,11 @@ export default function TourHero({ tour }) {
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-6">
-        <dl className="grid grid-cols-2 border border-white/15 bg-brandDark/85 backdrop-blur-md md:grid-cols-5">
-          {metrics.map((metric, index) => (
+        <dl className="grid grid-cols-2 border border-white/15 bg-brandDark/85 backdrop-blur-md md:grid-cols-4">
+          {metrics.map((metric) => (
             <div
               key={metric.label}
-              className={`min-h-24 px-5 py-5 md:px-6 ${
-                index === metrics.length - 1 ? 'col-span-2 md:col-span-1' : ''
-              } border-b border-r border-white/10 md:border-b-0`}
+              className="min-h-24 border-b border-r border-white/10 px-5 py-5 md:border-b-0 md:px-6"
             >
               <dt className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-gray-500">
                 {metric.label}
