@@ -34,19 +34,35 @@ test('every Alpine GT chapter has factual previous-tour imagery metadata', () =>
     layout: 'left',
   });
 
+  assert.deepEqual(alpineGtTour.days[1].image, {
+    src: alpineGtTour.days[1].image.src,
+    alt: 'A line of grand touring cars gathered in the rain during a Black Forest drive',
+    width: 1800,
+    height: 1013,
+    layout: 'right',
+  });
+
+  assert.deepEqual(alpineGtTour.days[2].image, {
+    src: alpineGtTour.days[2].image.src,
+    alt: 'A red Ferrari Spider paused among snow-lined roads on a legendary Alpine pass',
+    width: 1800,
+    height: 1013,
+    layout: 'hero',
+  });
+
   assert.deepEqual(alpineGtTour.days[3].image, {
     src: alpineGtTour.days[3].image.src,
-    alt: 'A red Toyota Supra sweeping through open countryside on a previous Drive tour',
-    width: 1800,
-    height: 1200,
+    alt: 'A white Porsche 911 Turbo crossing open countryside beneath a dramatic sky',
+    width: 1620,
+    height: 1080,
     layout: 'left',
   });
 
   assert.deepEqual(alpineGtTour.days[4].image, {
     src: alpineGtTour.days[4].image.src,
-    alt: 'A purple Porsche 911 GT3 RS driving home on a wet road beneath dark skies',
+    alt: 'A purple Porsche 911 GT3 RS in motion on the homeward drive',
     width: 1800,
-    height: 1200,
+    height: 1203,
     layout: 'quiet',
   });
 });
@@ -65,11 +81,23 @@ test('homepage places the Life on tour story between operations and founders', a
   assert.ok(landing.indexOf('<LifeOnTour') < landing.indexOf('id="team"'));
   assert.match(lifeOnTour, /Life on tour/);
   assert.match(lifeOnTour, /Moments from previous Drive tours/);
-  assert.match(lifeOnTour, /tour-life-driving\.webp/);
-  assert.match(lifeOnTour, /tour-life-dinner\.webp/);
-  assert.match(lifeOnTour, /tour-life-group\.webp/);
-  assert.equal((lifeOnTour.match(/loading="lazy"/g) ?? []).length, 3);
-  assert.match(lifeOnTour, /md:grid-rows-\[15rem_15rem\]/);
+  assert.deepEqual(
+    [...lifeOnTour.matchAll(/tour-life-community-[a-z-]+\.webp/g)].map(([image]) => image),
+    [
+      'tour-life-community-group.webp',
+      'tour-life-community-driver.webp',
+      'tour-life-community-alps.webp',
+      'tour-life-community-all-together.webp',
+      'tour-life-community-dinner.webp',
+      'tour-life-community-trophy.webp',
+    ],
+  );
+  assert.equal((lifeOnTour.match(/loading="lazy"/g) ?? []).length, 6);
+  assert.match(lifeOnTour, /md:col-span-7 md:row-span-2[\s\S]*src=\{groupImage\}/);
+  assert.match(lifeOnTour, /src=\{allTogetherImage\}/);
+  assert.doesNotMatch(lifeOnTour, /wineImage|tour-life-community-wine/);
+  assert.match(lifeOnTour, /md:grid-cols-12/);
+  assert.match(lifeOnTour, /lg:grid-rows-\[18rem_18rem_15rem\]/);
   assert.match(lifeOnTour, /mx-auto mb-10 max-w-2xl text-center/);
   assert.match(lifeOnTour, /mt-5 text-center text-\[0\.7rem\]/);
 });
@@ -85,6 +113,8 @@ test('itinerary renders one lazy previous-tour figure from each day', async () =
   assert.match(source, /width=\{day\.image\.width\}/);
   assert.match(source, /height=\{day\.image\.height\}/);
   assert.match(source, /loading="lazy"/);
+  assert.match(source, /className="h-full w-full object-cover"/);
+  assert.doesNotMatch(source, /object-contain/);
   assert.match(source, /From a previous Drive tour/);
   assert.match(source, /imageLayoutStyles\[day\.image\.layout\]/);
   assert.doesNotMatch(source, /day\.number % 2/);
