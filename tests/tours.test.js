@@ -14,8 +14,8 @@ test('Alpine GT contains the approved five-day journey', () => {
     alpineGtTour.days.map(({ name }) => name),
     [
       'The Grand Departure',
-      'Into the Black Forest',
-      'The Legendary Three Passes',
+      'The Black Forest',
+      'The Legendary Passes',
       'From Alps to Vineyards',
       'The Journey Home',
     ],
@@ -53,15 +53,17 @@ test('Alpine GT package details are complete', () => {
     'Breakfast each morning',
     'Evening meals',
     'Hotel wellness facilities',
-    'Parking',
+    'Secure Parking',
     'Swiss motorway vignettes',
     'The Drive exclusive welcome package',
+    'The Drive media package of your adventure',
   ]);
   assert.deepEqual(alpineGtTour.excluded, [
     'Fuel',
     'Lunches',
     'Drinks',
     'Travel insurance',
+    'Breakdown cover',
     'French tolls',
     'Personal expenses',
   ]);

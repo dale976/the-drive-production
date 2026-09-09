@@ -18,26 +18,6 @@ const organizationSchema = {
 };
 
 export default function LandingPage({activePage = 'home'}) {
-    // const features = [
-    //     {
-    //         icon: <Car className="w-7 h-7 text-brandTeal" strokeWidth={1.5} />,
-    //         title: 'THE FLEET',
-    //         desc: "Tour-hardened machines built for the road. Two lead cars and a dedicated support vehicle.",
-    //         link: '/fleet'
-    //     },
-    //     {
-    //         icon: <Map className="w-7 h-7 text-brandTeal" strokeWidth={1.5} />,
-    //         title: 'TOURS',
-    //         desc: "Hand-picked alpine runs, coastal curves, and luxury lodging. Every detail curated.",
-    //         link: '/tours'
-    //     },
-    //     {
-    //         icon: <Users className="w-7 h-7 text-brandTeal" strokeWidth={1.5} />,
-    //         title: 'ABOUT US',
-    //         desc: 'Who we are, how we operate, and what drives us forward.',
-    //         link: '/about'
-    //     },
-    // ];
 
     const pillars = [
         {
@@ -185,10 +165,10 @@ export default function LandingPage({activePage = 'home'}) {
                             className="text-brandTeal text-xs font-bold tracking-widest uppercase block">The Pillars</span>
                         <h2 className="text-2xl md:text-3xl font-black tracking-tight uppercase">HOW WE OPERATE</h2>
                         <p className="mx-auto max-w-xl text-sm font-medium leading-relaxed text-gray-400 md:text-base">
-                            From the first route recce to the final hotel arrival, every element is considered as
-                            part of one complete experience. We bring together exceptional roads, distinctive
-                            places to stay and a carefully curated group of drivers—leaving you free to enjoy the
-                            journey, the car and the company.
+                            From the first route recce to the final hotel arrival, every element is crafted as
+                            one complete and unique experience. We bring together exceptional roads, distinctive
+                            places to stay and a carefully curated group of drivers; leaving you free to enjoy a
+                            grand adventure with your car and great company.
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -243,7 +223,7 @@ export default function LandingPage({activePage = 'home'}) {
 
                         <div className="mt-8 max-w-2xl space-y-6 text-base font-medium leading-8 text-gray-300">
                             <p>
-                                We’re Lewis and Alan—friends for more than two decades, united by a lifelong love of
+                                Meet Lewis and Alan, friends for more than two decades, united by a lifelong love of
                                 cars and the freedom of a great road. Over the past three years, we’ve planned and
                                 hosted private driving tours, refining every detail through experience: the roads, the
                                 pace, the places we stay and the way a group comes together over the course of a
@@ -259,7 +239,7 @@ export default function LandingPage({activePage = 'home'}) {
                         </div>
 
                         <p className="mt-10 border-l-2 border-brandTeal pl-5 text-sm font-black uppercase tracking-[0.16em] text-white md:text-base">
-                            Great roads. Remarkable cars. Good company.
+                            Epic roads. Remarkable cars. Exceptional company.
                         </p>
                     </div>
                 </div>
