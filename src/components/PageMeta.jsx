@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const siteName = 'The Drive Touring Company';
 const siteUrl = 'https://thedrivetouringcompany.com';
-const defaultImage = '/alpine-gt-2027-social.jpg';
+const defaultImage = '/social-preview.jpg';
 
 function upsertMeta(attribute, key, content) {
   let element = document.head.querySelector(`meta[${attribute}="${key}"]`);
@@ -37,6 +37,8 @@ export default function PageMeta({
     upsertMeta('property', 'og:type', 'website');
     upsertMeta('property', 'og:url', canonicalUrl);
     upsertMeta('property', 'og:image', imageUrl);
+    upsertMeta('property', 'og:image:width', '1200');
+    upsertMeta('property', 'og:image:height', '630');
     upsertMeta('property', 'og:image:alt', `${title || siteName} — The Drive Touring Company`);
     upsertMeta('name', 'twitter:card', 'summary_large_image');
     upsertMeta('name', 'twitter:title', fullTitle);
