@@ -10,7 +10,7 @@ export const alpineGtTour = {
   duration: '5 DAYS',
   nights: '4 NIGHTS',
   distance: 'APPROX. 1,550 MILES',
-  groupSize: 'MIN 15 CARS',
+  groupSize: '15 CARS',
   tagline: 'HIGH-ALTITUDE HAIRPINS & PREMIUM VENUES',
   description:
     "A grand touring journey that begins with a sweep of the Black Forest followed by a climb into Switzerland's most iconic mountain passes, and unwinds into the vineyards and old stone of Burgundy.",
