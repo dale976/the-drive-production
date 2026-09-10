@@ -17,7 +17,7 @@ const tourSchema = {
   name: alpineGtTour.title,
   description: alpineGtTour.description,
   url: 'https://thedrivetouringcompany.com/tours/alpine-gt-2027',
-  image: 'https://thedrivetouringcompany.com/alpine-gt-2027-social.jpg',
+  image: 'https://thedrivetouringcompany.com/social-preview.jpg',
   touristType: 'Supercar touring enthusiasts',
   provider: {
     '@type': 'Organization',
