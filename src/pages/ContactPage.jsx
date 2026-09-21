@@ -5,6 +5,7 @@ import Footer from '../components/Footer.jsx';
 import Nav from '../components/Nav.jsx';
 import PageMeta from '../components/PageMeta.jsx';
 import { alpineGtTour } from '../data/tours.js';
+import { trackEvent } from '../analytics.js';
 
 const accessKey = 'b41dbf56-7093-4ec2-81b5-dac6ef5f350e';
 const fieldClass = 'mt-2 min-h-12 w-full border border-white/15 bg-brandDark px-4 py-3 text-base text-white outline-none transition-colors placeholder:text-gray-600 hover:border-white/30 focus:border-brandTeal focus:ring-1 focus:ring-brandTeal';
@@ -39,6 +40,7 @@ export default function ContactPage() {
       }
 
       form.reset();
+      trackEvent('generate_lead', { tour: 'alpine_gt_2027', method: 'enquiry_form' });
       setStatus('success');
       setMessage('Thank you. Your interest has been registered and our team will be in touch.');
     } catch {

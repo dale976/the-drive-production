@@ -1,6 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop.jsx';
+import Analytics from './components/Analytics.jsx';
+import PrivacyPage from './pages/PrivacyPage.jsx';
 
 const LandingPage = lazy(() => import('./pages/LandingPage.jsx'));
 const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
@@ -24,8 +26,10 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Analytics />
       <Suspense fallback={<PageFallback />}>
         <Routes>
+          <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/" element={<LandingPage activePage="home" />} />
           <Route path="/about" element={<AboutPage activePage="about" />} />
           <Route path="/tours" element={<ToursPage activePage="tours" />} />
