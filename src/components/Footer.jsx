@@ -1,7 +1,14 @@
+import { Link } from 'react-router-dom';
+import { analyticsConfigured } from '../analytics.js';
+
 export default function Footer() {
   return (
     <footer className="z-10 mt-auto border-t border-gray-900 bg-brandGray/20">
       <div className="space-y-6 py-12 text-center">
+        <div className="flex justify-center gap-6 text-sm text-gray-400">
+          <Link to="/privacy" className="underline">Privacy</Link>
+          {analyticsConfigured && <button className="underline" onClick={() => window.dispatchEvent(new Event('analytics-settings'))}>Cookie settings</button>}
+        </div>
         <div className="flex justify-center space-x-6 text-gray-500">
           <a href="https://www.instagram.com/thedrivetouringcompany?igsh=Y3NicDY0NTNqM29u" target="_blank" rel="noopener noreferrer" className="transition hover:text-brandTeal" aria-label="Instagram">
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
