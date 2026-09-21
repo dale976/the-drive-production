@@ -58,12 +58,13 @@ export default function Analytics() {
     <section aria-label="Analytics preferences" className="fixed inset-x-0 bottom-0 z-[100] border-t border-brandTeal/40 bg-brandDark p-6 text-white shadow-2xl">
       <div className="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
-          <h2 className="font-bold">Help us improve The Drive</h2>
-          <p className="mt-2 text-sm text-gray-300">With your permission, we use Google Analytics to understand page visits and clicks. You can change your choice in the footer. <Link to="/privacy" className="underline">Privacy information</Link></p>
+          <h2 className="font-bold">Help us improve your experience</h2>
+          <p className="mt-2 text-sm text-gray-300">Can we use analytics cookies to understand which pages people visit and what they click? This helps us improve the website. You can change your choice at any time.</p>
+          <Link to="/privacy" className="mt-2 inline-block text-sm text-gray-300 underline">Privacy information</Link>
         </div>
         <div className="flex shrink-0 gap-3">
-          <button onClick={() => choose('rejected')} className="min-h-12 border border-brandTeal px-5 font-bold focus-visible:outline-2 focus-visible:outline-white">Reject analytics</button>
-          <button onClick={() => choose('accepted')} className="min-h-12 border border-brandTeal px-5 font-bold focus-visible:outline-2 focus-visible:outline-white">Accept analytics</button>
+          <button onClick={() => choose('rejected')} className="min-h-12 border border-brandTeal px-5 font-bold focus-visible:outline-2 focus-visible:outline-white">Reject cookies</button>
+          <button onClick={() => choose('accepted')} className="min-h-12 border border-brandTeal px-5 font-bold focus-visible:outline-2 focus-visible:outline-white">Accept cookies</button>
         </div>
       </div>
     </section>
