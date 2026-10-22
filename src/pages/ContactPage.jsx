@@ -147,7 +147,7 @@ export default function ContactPage() {
               <p className="text-xs font-bold uppercase tracking-[0.32em] text-brandTeal">
                 {tour ? tour.title : 'Let’s talk'}
               </p>
-              <h1 className="mt-5 max-w-xl text-5xl font-black uppercase leading-[0.95] tracking-[-0.045em] md:text-6xl">
+              <h1 className="mt-5 max-w-xl break-words text-[clamp(2rem,8vw,3rem)] font-black uppercase leading-[0.95] tracking-[-0.045em] md:text-5xl xl:text-6xl">
                 {tour ? 'Your car. Your experience. Our shared adventure.' : 'Great experiences start with a conversation.'}
               </h1>
               <p className="mt-8 max-w-lg text-base leading-8 text-gray-300">

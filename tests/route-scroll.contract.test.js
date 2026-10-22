@@ -14,3 +14,9 @@ test('route changes reset the document to the top', async () => {
   assert.match(scrollToTop, /useLocation/);
   assert.match(scrollToTop, /window\.scrollTo\(\{ top: 0, left: 0, behavior: 'instant' \}\)/);
 });
+
+test('switching event and general enquiries resets scroll even on the same pathname', async () => {
+  const source = await readProjectFile('src/components/ScrollToTop.jsx');
+  assert.match(source, /const { pathname, search } = useLocation\(\)/);
+  assert.match(source, /}, \[pathname, search\]\)/);
+});

@@ -16,3 +16,9 @@ test('production content security policy permits Web3Forms submissions', async (
 
   assert.match(headers, /connect-src[^\n]*https:\/\/api\.web3forms\.com/);
 });
+
+test('enquiry headlines scale and wrap inside narrow columns', async () => {
+  const source = await readProjectFile('src/pages/ContactPage.jsx');
+  assert.match(source, /<h1 className="[^"\n]*break-words[^"\n]*text-\[clamp\(/);
+  assert.match(source, /md:text-5xl xl:text-6xl/);
+});
