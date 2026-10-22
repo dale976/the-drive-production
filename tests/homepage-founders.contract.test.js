@@ -23,6 +23,7 @@ test('homepage hero keeps its primary actions without a duplicate tour badge', a
   );
 
   assert.match(source, />\s*Explore Tours\s*</);
-  assert.match(source, />\s*Register interest\s*</);
+  assert.match(source, /to={alpineGtTour.registerPath}/);
+  assert.match(source, /{alpineGtTour.enquiryLabel}/);
   assert.doesNotMatch(source, /ALPINE GT 2027 · REGISTER INTEREST NOW|animate-pulse/);
 });

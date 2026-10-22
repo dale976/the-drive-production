@@ -53,76 +53,76 @@ function EnquiryForm({ tour }) {
   };
 
   return (
-              <form onSubmit={onSubmit} aria-busy={status === 'submitting'} className="mt-10 space-y-7">
-                <input type="checkbox" name="botcheck" className="hidden" tabIndex="-1" autoComplete="off" />
+    <form onSubmit={onSubmit} aria-busy={status === 'submitting'} className="mt-10 space-y-7">
+      <input type="checkbox" name="botcheck" className="hidden" tabIndex="-1" autoComplete="off" />
 
-                <label className={`block ${labelClass}`}>
-                  Your name
-                  <input className={fieldClass} type="text" name="name" autoComplete="name" required />
-                </label>
+      <label className={`block ${labelClass}`}>
+        Your name
+        <input className={fieldClass} type="text" name="name" autoComplete="name" required />
+      </label>
 
-                <label className={`block ${labelClass}`}>
-                  Email address
-                  <input className={fieldClass} type="email" name="email" autoComplete="email" required />
-                </label>
+      <label className={`block ${labelClass}`}>
+        Email address
+        <input className={fieldClass} type="email" name="email" autoComplete="email" required />
+      </label>
 
-                {tour && (
-                  <>
-                    <label className={`block ${labelClass}`}>
-                      Car make and model
-                      <input className={fieldClass} type="text" name="Vehicle" placeholder="For example, Porsche 911 GT3" required />
-                    </label>
+      {tour && (
+        <>
+          <label className={`block ${labelClass}`}>
+            Car make and model
+            <input className={fieldClass} type="text" name="Vehicle" placeholder="For example, Porsche 911 GT3" required />
+          </label>
 
-                    <label className={`block ${labelClass}`}>
-                      Your ownership and driving experience
-                      <span className="mt-3 block text-sm font-normal normal-case tracking-normal leading-6 text-gray-400">
-                        Tell us how long you’ve owned your car, your experience driving it or similar performance cars, and any road trips, tours or driver training you’ve enjoyed.
-                      </span>
-                      <textarea className={`${fieldClass} min-h-36 resize-y`} name="Experience" required />
-                    </label>
-                  </>
-                )}
+          <label className={`block ${labelClass}`}>
+            Your ownership and driving experience
+            <span className="mt-3 block text-sm font-normal normal-case tracking-normal leading-6 text-gray-400">
+              Tell us how long you’ve owned your car, your experience driving it or similar performance cars, and any road trips, tours or driver training you’ve enjoyed.
+            </span>
+            <textarea className={`${fieldClass} min-h-36 resize-y`} name="Experience" required />
+          </label>
+        </>
+      )}
 
-                <label className={`block ${labelClass}`}>
-                  {tour ? 'Anything else you’d like us to know? (optional)' : 'How can we help?'}
-                  {tour && (
-                    <span className="mt-3 block text-sm font-normal normal-case tracking-normal leading-6 text-gray-400">
-                      Questions or different circumstances? Let us know so we can consider them personally.
-                    </span>
-                  )}
-                  <textarea className={`${fieldClass} min-h-36 resize-y`} name="message" required={!tour} />
-                </label>
+      <label className={`block ${labelClass}`}>
+        {tour ? 'Anything else you’d like us to know? (optional)' : 'How can we help?'}
+        {tour && (
+          <span className="mt-3 block text-sm font-normal normal-case tracking-normal leading-6 text-gray-400">
+            Questions or different circumstances? Let us know so we can consider them personally.
+          </span>
+        )}
+        <textarea className={`${fieldClass} min-h-36 resize-y`} name="message" required={!tour} />
+      </label>
 
-                <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-gray-400">
-                  <input
-                    type="checkbox"
-                    name="Consent"
-                    value="Agreed to be contacted about this enquiry"
-                    required
-                    className="mt-1 h-4 w-4 shrink-0 accent-[#00A896]"
-                  />
-                  <span>I agree that The Drive Touring Company may contact me about this enquiry.</span>
-                </label>
+      <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-gray-400">
+        <input
+          type="checkbox"
+          name="Consent"
+          value="Agreed to be contacted about this enquiry"
+          required
+          className="mt-1 h-4 w-4 shrink-0 accent-[#00A896]"
+        />
+        <span>I agree that The Drive Touring Company may contact me about this enquiry.</span>
+      </label>
 
-                <button
-                  type="submit"
-                  disabled={status === 'submitting'}
-                  className="inline-flex min-h-12 w-full items-center justify-center gap-3 bg-brandTeal px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-brandDark transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal disabled:cursor-wait disabled:opacity-60 sm:w-auto"
-                >
-                  <Send aria-hidden="true" className="h-4 w-4" />
-                  {status === 'submitting' ? 'Sending…' : 'Send enquiry'}
-                </button>
+      <button
+        type="submit"
+        disabled={status === 'submitting'}
+        className="inline-flex min-h-12 w-full items-center justify-center gap-3 bg-brandTeal px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-brandDark transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal disabled:cursor-wait disabled:opacity-60 sm:w-auto"
+      >
+        <Send aria-hidden="true" className="h-4 w-4" />
+        {status === 'submitting' ? 'Sending…' : 'Send enquiry'}
+      </button>
 
-                <div aria-live="polite" aria-atomic="true" className="min-h-8">
-                  {message && (
-                    <p className={`flex items-start gap-2 text-sm leading-6 ${status === 'error' ? 'text-red-300' : status === 'success' ? 'text-brandTeal' : 'text-gray-400'}`}>
-                      {status === 'success' && <CheckCircle2 aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0" />}
-                      {status === 'error' && <AlertCircle aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0" />}
-                      <span>{message}</span>
-                    </p>
-                  )}
-                </div>
-              </form>
+      <div aria-live="polite" aria-atomic="true" className="min-h-8">
+        {message && (
+          <p className={`flex items-start gap-2 text-sm leading-6 ${status === 'error' ? 'text-red-300' : status === 'success' ? 'text-brandTeal' : 'text-gray-400'}`}>
+            {status === 'success' && <CheckCircle2 aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0" />}
+            {status === 'error' && <AlertCircle aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0" />}
+            <span>{message}</span>
+          </p>
+        )}
+      </div>
+    </form>
   );
 }
 

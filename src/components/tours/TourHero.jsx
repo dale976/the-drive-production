@@ -45,9 +45,9 @@ export default function TourHero({ tour }) {
         </p>
         <Link
           to={tour.registerPath}
-          className="mt-9 inline-flex min-h-11 w-fit items-center justify-center border border-brandTeal bg-brandTeal px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-brandDark shadow-[0_0_30px_rgba(0,166,166,0.28)] transition-colors hover:bg-white hover:border-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal"
+          className="mt-9 inline-flex min-h-11 w-fit max-w-full text-center items-center justify-center border border-brandTeal bg-brandTeal px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-brandDark shadow-[0_0_30px_rgba(0,166,166,0.28)] transition-colors hover:bg-white hover:border-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal"
         >
-          Register Interest
+          {tour.enquiryLabel}
         </Link>
       </div>
 

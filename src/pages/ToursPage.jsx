@@ -148,10 +148,10 @@ export default function ToursPage({ activePage = 'tours' }) {
                                 EXPLORE THE TOUR
                             </Link>
                             <Link
-                                to="/contact"
+                                to={tour.registerPath}
                                 className="inline-flex min-h-11 items-center bg-brandTeal px-6 py-3 text-xs font-black tracking-[0.2em] text-brandDark transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal"
                             >
-                                REGISTER INTEREST
+                                {tour.enquiryLabel}
                             </Link>
                         </div>
 
@@ -166,11 +166,11 @@ export default function ToursPage({ activePage = 'tours' }) {
                     <span className="text-brandTeal text-xs font-bold tracking-widest uppercase block">Stay Connected</span>
                     <h2 className="text-2xl font-black tracking-tight uppercase">MORE EXPERIENCES IN DEVELOPMENT</h2>
                     <p className="text-sm text-gray-400 leading-relaxed max-w-xl mx-auto font-medium">
-                        Additional tours, events and bespoke experiences across the UK and Europe are in development and more information will be announced here soon. Register your interest here to receive early access to our future events.
+                        Additional tours, events and bespoke experiences across the UK and Europe are in development and more information will be announced here soon. Get in touch to ask about future events and bespoke experiences.
                     </p>
                     <div className="pt-2">
                         <Link to="/contact" className="border-b border-brandTeal/30 pb-1 text-xs font-black tracking-widest text-brandTeal transition-all hover:border-brandTeal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal">
-                            REGISTER INTEREST →
+                            GET IN TOUCH →
                         </Link>
                     </div>
                 </div>

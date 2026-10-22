@@ -36,9 +36,9 @@ export default function RegisterInterestPanel({ tour, mobile = false }) {
           </div>
           <Link
             to={tour.registerPath}
-            className="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap bg-brandTeal px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-brandDark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center max-w-[58%] text-center bg-brandTeal px-3 py-2 text-[0.65rem] font-bold uppercase tracking-[0.1em] text-brandDark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
-            Register Interest
+            {tour.enquiryLabel}
           </Link>
         </div>
       </aside>
@@ -55,10 +55,10 @@ export default function RegisterInterestPanel({ tour, mobile = false }) {
           </h2>
         </div>
         <Link
-          to="/contact"
+          to={tour.registerPath}
           className="inline-flex min-h-11 w-fit items-center justify-center border border-brandDark bg-brandDark px-7 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition-colors hover:bg-white hover:text-brandDark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandDark"
         >
-          Register Interest
+          {tour.enquiryLabel}
         </Link>
       </div>
     </section>

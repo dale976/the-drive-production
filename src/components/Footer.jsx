@@ -5,7 +5,8 @@ export default function Footer() {
   return (
     <footer className="z-10 mt-auto border-t border-gray-900 bg-brandGray/20">
       <div className="space-y-6 py-12 text-center">
-        <div className="flex justify-center gap-6 text-sm text-gray-400">
+        <div className="flex flex-wrap justify-center gap-6 px-6 text-sm text-gray-400">
+          <Link to="/contact" className="underline">Get in touch</Link>
           <Link to="/privacy" className="underline">Privacy</Link>
           {analyticsConfigured && <button className="underline" onClick={() => window.dispatchEvent(new Event('analytics-settings'))}>Cookie settings</button>}
         </div>
