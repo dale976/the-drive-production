@@ -6,6 +6,7 @@ import JourneyOverview from '../components/tours/JourneyOverview.jsx';
 import PackageDetails from '../components/tours/PackageDetails.jsx';
 import RegisterInterestPanel from '../components/tours/RegisterInterestPanel.jsx';
 import TourHero from '../components/tours/TourHero.jsx';
+import TourPrice from '../components/tours/TourPrice.jsx';
 import { alpineGtTour } from '../data/tours.js';
 
 const metaDescription =
@@ -74,6 +75,9 @@ export default function TourDetailPage() {
             <p className="mt-8 max-w-3xl text-lg leading-8 text-gray-300 md:text-xl">
               {tour.description}
             </p>
+            <div className="mt-10 max-w-2xl">
+              <TourPrice tour={tour} />
+            </div>
           </div>
         </section>
 

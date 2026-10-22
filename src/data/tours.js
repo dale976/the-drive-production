@@ -1,7 +1,15 @@
 export const alpineGtTour = {
   slug: 'alpine-gt-2027',
   path: '/tours/alpine-gt-2027',
-  registerPath: '/contact',
+  registerPath: '/contact?tour=alpine-gt-2027',
+  enquiryLabel: 'Enquire about Alpine GT',
+  pricing: {
+    total: 3295,
+    deposit: 500,
+    balance: 2795,
+    balanceDueDays: 30,
+    currency: 'GBP',
+  },
   title: 'THE ALPINE GT 2027',
   shortTitle: 'THE ALPINE GT',
   subtitle: 'BLACK FOREST · SWISS ALPS · BURGUNDY',
