@@ -1,6 +1,6 @@
 export default function HotelFeature({ hotel, reverse = false, dayNumber }) {
   return (
-    <section aria-label={`${hotel.name} accommodation`} className="mx-auto mt-16 max-w-7xl text-white md:mt-24">
+    <section aria-label={`${hotel.name} accommodation`} className="mx-auto mt-12 max-w-7xl text-white md:mt-16">
       <div className="grid overflow-hidden border border-white/15 bg-brandGray shadow-[0_28px_80px_rgba(0,0,0,0.32)] lg:grid-cols-12">
         <div className={`relative min-h-72 lg:col-span-7 lg:min-h-[34rem] ${reverse ? 'lg:order-2' : ''}`}>
           <img
@@ -27,7 +27,7 @@ export default function HotelFeature({ hotel, reverse = false, dayNumber }) {
           <h3 className="relative mt-4 text-3xl font-black uppercase leading-none tracking-tight md:text-5xl">
             {hotel.name}
           </h3>
-          <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
+          <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">
             {hotel.region}
           </p>
           <p className="relative mt-7 max-w-xl text-base leading-7 text-gray-300">

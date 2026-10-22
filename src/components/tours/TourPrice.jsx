@@ -1,10 +1,24 @@
-export default function TourPrice({ tour }) {
+export default function TourPrice({ tour, compact = false }) {
   const { pricing } = tour;
   const formatPrice = (amount) => new Intl.NumberFormat('en-GB', {
     style: 'currency',
     currency: pricing.currency,
     maximumFractionDigits: 0,
   }).format(amount);
+
+  if (compact) {
+    return (
+      <div className="border-t border-white/15 pt-5 text-white">
+        <p className="text-sm leading-7 text-gray-300">
+          <strong className="mr-2 text-3xl font-black tracking-tight text-white">{formatPrice(pricing.total)}</strong>
+          One car · two people sharing accommodation
+        </p>
+        <p className="mt-3 text-sm leading-6 text-gray-300">
+          {formatPrice(pricing.deposit)} deposit · {formatPrice(pricing.balance)} balance due {pricing.balanceDueDays} days before departure
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="border border-brandTeal/30 bg-brandGray/20 p-6 text-white md:p-8">

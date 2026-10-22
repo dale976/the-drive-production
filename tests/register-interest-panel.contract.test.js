@@ -35,3 +35,12 @@ test('all event calls to action carry event context and general enquiries remain
   const footer = await read('src/components/Footer.jsx');
   assert.match(footer, /to="\/contact"[^>]*>Get in touch/);
 });
+
+test('mobile registration observes the closing panel as well as the hero', async () => {
+  const source = await readFile(componentUrl, 'utf8');
+  assert.match(source, /register-interest-heading/);
+  assert.match(source, /entry\.target === closingPanel/);
+  assert.match(source, /observer\.observe\(closingPanel\)/);
+  assert.match(source, /setShowMobileBar\(!heroVisible && !closingVisible\)/);
+  assert.match(source, /observer\.disconnect\(\)/);
+});

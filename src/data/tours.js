@@ -2,7 +2,7 @@ export const alpineGtTour = {
   slug: 'alpine-gt-2027',
   path: '/tours/alpine-gt-2027',
   registerPath: '/contact?tour=alpine-gt-2027',
-  enquiryLabel: 'Enquire about Alpine GT',
+  enquiryLabel: 'Start your Alpine adventure',
   pricing: {
     total: 3295,
     deposit: 500,
@@ -43,12 +43,11 @@ export const alpineGtTour = {
         'An efficient continental launch through eastern France, followed by a rewarding final approach into the Black Forest.',
       headline: 'A confident continental opening',
       overview:
-        'The journey begins with a composed crossing into France and an easy crew rhythm on the road east. As the autoroute gives way to the High Black Forest, the drive narrows into a proper sense of occasion before the Parkhotel Adler reveal.',
+        'Settle into the continental drive before the autoroute gives way to forest roads and an evening arrival at Parkhotel Adler.',
       routeOverview:
         'Calais through eastern France, then off the autoroute for the final approach into the Black Forest and Hinterzarten.',
       highlights: [
         'A settled first-day rhythm across the continent',
-        'The final forest approach into Hinterzarten',
         'An evening arrival at Parkhotel Adler',
       ],
       overnight: 'Parkhotel Adler',
@@ -72,11 +71,10 @@ export const alpineGtTour = {
         'A full day focused on the strongest roads of the Southern Black Forest before crossing into Switzerland and arriving beside Lake Lucerne.',
       headline: 'Forest rhythm, then a lakeside reset',
       overview:
-        'Long, flowing sections draw the best from the Southern Black Forest, with changing elevation and a measured pace throughout. By late afternoon the landscape opens toward Lake Lucerne and a composed arrival at Campus Hotel Hertenstein.',
+        'Flowing forest roads and changing elevations give way to the open shores of Lake Lucerne and an evening at Campus Hotel Hertenstein.',
       routeOverview:
         'The High Black Forest via Titisee, Schluchsee, St. Blasien, and the southern forest roads, then across to Lake Lucerne.',
       highlights: [
-        'The strongest Southern Black Forest roads',
         'A gradual change from woodland to Alpine lake',
         'A lakeside evening at Campus Hotel Hertenstein',
       ],
@@ -101,11 +99,10 @@ export const alpineGtTour = {
         'The hero day: an uncompromised loop joining Furka, Grimsel, and Susten—the roads this journey was built around.',
       headline: 'Three high roads, one defining day',
       overview:
-        'This is the uncompromised centrepiece: a rare, expertly paced circuit of Switzerland’s great high roads. Glacier scenery, fast-changing light, and the return to the calm of Hertenstein give the day its lasting shape.',
+        'Glacier scenery and changing light frame the tour’s defining drive, followed by a second evening at Hertenstein.',
       routeOverview:
         'Lake Lucerne to Andermatt, then Furka, Grimsel, and Susten before returning to Hertenstein.',
       highlights: [
-        'A complete Furka, Grimsel, and Susten circuit',
         'High-altitude driving framed by glacier scenery',
         'A restorative return to Hertenstein',
       ],
@@ -130,12 +127,11 @@ export const alpineGtTour = {
         'A deliberately scenic westward journey through lakes and open country, leaving cities behind for a relaxed château arrival around 17:00.',
       headline: 'From Alpine scale to old-stone Burgundy',
       overview:
-        'The route turns west with a generous scenic rhythm, carrying the group from the last great mountain views into vineyard country. There is no city slog—only a relaxed, considered approach to Château de Chailly as the final evening begins.',
+        'Mountain views give way to vineyards on a relaxed westward drive, ending with the final evening at Château de Chailly.',
       routeOverview:
         'Lake Lucerne via Brünig Pass, Brienz, Spiez, Gstaad, and the Jura foothills to Burgundy.',
       highlights: [
         'The Brünig Pass and the Bernese lakes',
-        'A scenic westward run through Gstaad',
         'A château arrival in Burgundy',
       ],
       overnight: 'Château de Chailly',
@@ -159,7 +155,7 @@ export const alpineGtTour = {
         'A calm, efficient run to Calais that gives the group space to reflect on the week.',
       headline: 'A polished final run home',
       overview:
-        'The return is calm and efficient, with enough space to replay the passes, the hotels, and the company that shaped the week. Burgundy recedes in the mirrors as the group settles into the final continental miles.',
+        'A relaxed autoroute drive leaves time to reflect on the roads, hotels and friendships of the week.',
       routeOverview:
         'Burgundy through Troyes and Reims to Calais and the Eurotunnel.',
       highlights: [

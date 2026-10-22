@@ -62,7 +62,7 @@ export default function JourneyOverview({ days }) {
                   <span className="block text-base font-bold uppercase leading-5 tracking-wide text-white">
                     {day.name}
                   </span>
-                  <span className="mt-3 block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gray-500">
+                  <span className="mt-3 block text-xs font-semibold uppercase tracking-[0.12em] text-gray-400">
                     {day.drivingStyle}
                   </span>
                 </span>

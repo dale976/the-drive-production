@@ -6,7 +6,7 @@ test('Alpine GT exposes event enquiry and the approved GBP payment schedule', ()
   assert.equal(alpineGtTour.slug, 'alpine-gt-2027');
   assert.equal(alpineGtTour.path, '/tours/alpine-gt-2027');
   assert.equal(alpineGtTour.registerPath, '/contact?tour=alpine-gt-2027');
-  assert.equal(alpineGtTour.enquiryLabel, 'Enquire about Alpine GT');
+  assert.equal(alpineGtTour.enquiryLabel, 'Start your Alpine adventure');
   assert.deepEqual(alpineGtTour.pricing, {
     total: 3295, deposit: 500, balance: 2795, balanceDueDays: 30, currency: 'GBP',
   });

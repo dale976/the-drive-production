@@ -24,7 +24,7 @@ export default function ItineraryDay({ day, align = 'left', hotel = null, revers
     <article
       id={`day-${day.number}`}
       className={`relative scroll-mt-28 overflow-hidden border-b border-white/10 px-6 text-white ${
-        day.number === 5 ? 'py-16 md:py-20' : 'py-20 md:py-28'
+        day.number === 5 ? 'py-16 md:py-20' : 'py-16 md:py-24'
       } ${chapterStyles[day.number]}`}
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-8 lg:grid-cols-12 lg:gap-x-8">
@@ -36,7 +36,7 @@ export default function ItineraryDay({ day, align = 'left', hotel = null, revers
               {String(day.number).padStart(2, '0')}
             </p>
             <div className="pb-1 lg:mt-7 lg:pb-0">
-              <p className="text-[0.7rem] font-bold uppercase tracking-[0.26em] text-brandTeal">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-brandTeal">
                 Chapter {String(day.number).padStart(2, '0')}
               </p>
               <p className="mt-2 text-xs font-semibold uppercase leading-5 tracking-[0.16em] text-gray-400">
@@ -55,14 +55,14 @@ export default function ItineraryDay({ day, align = 'left', hotel = null, revers
           }`}>
             {day.name}
           </h3>
-          <p className="mt-8 max-w-2xl text-xl font-bold leading-8 text-white md:text-2xl">
+          <p className="mt-6 max-w-2xl text-xl font-bold leading-8 text-white md:text-2xl">
             {day.headline}
           </p>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-300">
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-gray-300">
             {day.overview}
           </p>
 
-          <figure className={`relative mt-12 overflow-hidden bg-brandGray ${
+          <figure className={`relative mt-8 overflow-hidden bg-brandGray ${
             imageLayoutStyles[day.image.layout]
           }`}>
             <img
@@ -82,7 +82,7 @@ export default function ItineraryDay({ day, align = 'left', hotel = null, revers
             </figcaption>
           </figure>
 
-          <div className="mt-12 grid gap-8 border-t border-white/15 pt-8 md:grid-cols-[1.2fr_0.8fr]">
+          <div className="mt-8 grid gap-8 border-t border-white/15 pt-8 md:grid-cols-[1.2fr_0.8fr]">
             <div>
               <h4 className="text-[0.7rem] font-bold uppercase tracking-[0.25em] text-brandTeal">
                 Route overview
@@ -119,7 +119,7 @@ export default function ItineraryDay({ day, align = 'left', hotel = null, revers
             </div>
           )}
 
-          <p className="mt-10 text-[0.7rem] font-bold uppercase tracking-[0.24em] text-gray-500">
+          <p className="mt-8 text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
             {day.number === 5 ? 'Journey end' : 'Overnight'}
             <span className="ml-4 text-sm tracking-[0.1em] text-white">{day.overnight}</span>
           </p>

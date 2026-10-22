@@ -8,6 +8,11 @@ import { alpineGtTour } from '../data/tours.js';
 
 export default function ToursPage({ activePage = 'tours' }) {
     const tour = alpineGtTour;
+    const formatPrice = (amount) => new Intl.NumberFormat('en-GB', {
+        style: 'currency',
+        currency: tour.pricing.currency,
+        maximumFractionDigits: 0,
+    }).format(amount);
 
     return (
         <div className="bg-brandDark text-white min-h-screen font-sans antialiased selection:bg-brandTeal selection:text-brandDark flex flex-col">
@@ -138,18 +143,26 @@ export default function ToursPage({ activePage = 'tours' }) {
                             </div>
                         </div>
 
+                        <div className="space-y-2 border-t border-gray-800 pt-5">
+                            <p className="text-3xl font-black text-white">{formatPrice(tour.pricing.total)}</p>
+                            <p className="text-sm text-gray-300">One car · two people sharing</p>
+                            <p className="text-sm leading-6 text-gray-400">
+                                {formatPrice(tour.pricing.deposit)} deposit · {formatPrice(tour.pricing.balance)} balance due {tour.pricing.balanceDueDays} days before departure
+                            </p>
+                        </div>
+
                         {/* CTA */}
-                        <div className="flex flex-wrap items-center gap-4 border-t border-gray-800/60 pt-4">
+                        <div className="grid grid-cols-[0.85fr_1.15fr] gap-3 border-t border-gray-800/60 pt-4">
                             <Link
                                 to={tour.path}
                                 aria-label={`Explore ${tour.title}`}
-                                className="inline-flex min-h-11 items-center border-2 border-brandTeal px-6 py-3 text-xs font-black tracking-[0.2em] text-brandTeal transition-colors hover:bg-brandTeal hover:text-brandDark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal"
+                                className="inline-flex min-h-12 min-w-0 items-center justify-center border-2 border-brandTeal px-3 py-3 text-center text-[0.65rem] font-black tracking-[0.1em] text-brandTeal transition-colors hover:bg-brandTeal hover:text-brandDark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal sm:text-xs"
                             >
                                 EXPLORE THE TOUR
                             </Link>
                             <Link
                                 to={tour.registerPath}
-                                className="inline-flex min-h-11 items-center bg-brandTeal px-6 py-3 text-xs font-black tracking-[0.2em] text-brandDark transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal"
+                                className="inline-flex min-h-12 min-w-0 items-center justify-center bg-brandTeal px-3 py-3 text-center text-[0.65rem] font-black uppercase tracking-[0.1em] text-brandDark transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal sm:text-xs"
                             >
                                 {tour.enquiryLabel}
                             </Link>

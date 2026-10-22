@@ -10,17 +10,27 @@ export default function RegisterInterestPanel({ tour, mobile = false }) {
     if (!mobile || isContactPage) return undefined;
 
     const hero = document.querySelector('[data-tour-hero]');
+    const closingPanel = document.querySelector('section[aria-labelledby="register-interest-heading"]');
     if (!hero) {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- Required fallback when the hero is not mounted.
       setShowMobileBar(true);
       return undefined;
     }
 
+    let heroVisible = true;
+    let closingVisible = false;
     const observer = new IntersectionObserver(
-      ([entry]) => setShowMobileBar(!entry.isIntersecting),
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.target === hero) heroVisible = entry.isIntersecting;
+          if (entry.target === closingPanel) closingVisible = entry.isIntersecting;
+        }
+        setShowMobileBar(!heroVisible && !closingVisible);
+      },
       { threshold: 0.05 },
     );
     observer.observe(hero);
+    if (closingPanel) observer.observe(closingPanel);
     return () => observer.disconnect();
   }, [isContactPage, mobile]);
 
@@ -45,6 +55,12 @@ export default function RegisterInterestPanel({ tour, mobile = false }) {
     );
   }
 
+  const formatPrice = (amount) => new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: tour.pricing.currency,
+    maximumFractionDigits: 0,
+  }).format(amount);
+
   return (
     <section className="bg-brandTeal px-6 py-20 text-brandDark" aria-labelledby="register-interest-heading">
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_auto] md:items-end">
@@ -53,13 +69,22 @@ export default function RegisterInterestPanel({ tour, mobile = false }) {
           <h2 id="register-interest-heading" className="mt-4 max-w-4xl text-4xl font-black uppercase leading-none tracking-tight md:text-7xl">
             {tour.shortTitle}
           </h2>
+          <p className="mt-4 text-sm leading-6">
+            <strong className="text-lg font-black">{formatPrice(tour.pricing.total)}</strong> · One car, two people sharing
+          </p>
+          <p className="mt-1 text-sm leading-6">
+            {formatPrice(tour.pricing.deposit)} deposit · {formatPrice(tour.pricing.balance)} balance due {tour.pricing.balanceDueDays} days before departure
+          </p>
         </div>
-        <Link
-          to={tour.registerPath}
-          className="inline-flex min-h-11 w-fit items-center justify-center border border-brandDark bg-brandDark px-7 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition-colors hover:bg-white hover:text-brandDark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandDark"
-        >
-          {tour.enquiryLabel}
-        </Link>
+        <div className="min-w-0">
+          <Link
+            to={tour.registerPath}
+            className="inline-flex min-h-11 w-fit max-w-full items-center justify-center border border-brandDark bg-brandDark px-7 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition-colors hover:bg-white hover:text-brandDark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandDark"
+          >
+            {tour.enquiryLabel}
+          </Link>
+          <p className="mt-2 text-xs leading-5">Every enquiry is reviewed personally.</p>
+        </div>
       </div>
     </section>
   );
