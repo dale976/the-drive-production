@@ -16,14 +16,13 @@ test('homepage presents the founders through a shared personal story', async () 
   assert.doesNotMatch(source, />LH<|>AD<|Creative & Experience Design|Routes & Logistics/);
 });
 
-test('homepage hero keeps its primary actions without a duplicate tour badge', async () => {
+test('homepage hero keeps Explore Tours without a direct tour enquiry CTA', async () => {
   const source = await readFile(
     new URL('../src/pages/LandingPage.jsx', import.meta.url),
     'utf8',
   );
 
   assert.match(source, />\s*Explore Tours\s*</);
-  assert.match(source, /to={alpineGtTour.registerPath}/);
-  assert.match(source, /{alpineGtTour.enquiryLabel}/);
+  assert.doesNotMatch(source, /alpineGtTour|registerPath|enquiryLabel/);
   assert.doesNotMatch(source, /ALPINE GT 2027 · REGISTER INTEREST NOW|animate-pulse/);
 });

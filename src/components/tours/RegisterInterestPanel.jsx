@@ -73,7 +73,7 @@ export default function RegisterInterestPanel({ tour, mobile = false }) {
             <strong className="text-lg font-black">{formatPrice(tour.pricing.total)}</strong> · One car, two people sharing
           </p>
           <p className="mt-1 text-sm leading-6">
-            {formatPrice(tour.pricing.deposit)} deposit · {formatPrice(tour.pricing.balance)} balance due {tour.pricing.balanceDueDays} days before departure
+            {formatPrice(tour.pricing.deposit)} deposit · final balance due no later than {tour.pricing.balanceDueDays} days before departure
           </p>
         </div>
         <div className="min-w-0">

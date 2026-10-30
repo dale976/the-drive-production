@@ -1,4 +1,4 @@
-import { Calendar, Clock, Users, Compass } from 'lucide-react';
+import { Clock, Users, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import toursHeroImg from '../assets/gt3_chateau.jpg';
 import Nav from '../components/Nav.jsx';
@@ -70,13 +70,6 @@ export default function ToursPage({ activePage = 'tours' }) {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-brandDark via-transparent to-transparent opacity-90 lg:opacity-60" />
 
-                        {/* Floating Date Badge */}
-                        <div className="absolute top-6 left-6">
-                            <div className="flex items-center gap-2 bg-brandDark border border-gray-800 px-4 py-2 shadow-xl">
-                                <Calendar className="w-3.5 h-3.5 text-brandTeal" />
-                                <span className="text-xs font-black tracking-widest text-white">{tour.date}</span>
-                            </div>
-                        </div>
                     </Link>
 
                     {/* Right: Specification & Copy */}
@@ -96,6 +89,7 @@ export default function ToursPage({ activePage = 'tours' }) {
                                     {tour.title}
                                 </Link>
                             </h3>
+                            <p className="text-lg font-bold leading-snug text-brandTeal md:text-xl">{tour.date}</p>
                             <p className="text-xs font-bold tracking-wider text-gray-400 uppercase italic">
                                 "{tour.tagline}"
                             </p>
@@ -144,27 +138,28 @@ export default function ToursPage({ activePage = 'tours' }) {
                         </div>
 
                         <div className="space-y-2 border-t border-gray-800 pt-5">
-                            <p className="text-3xl font-black text-white">{formatPrice(tour.pricing.total)}</p>
-                            <p className="text-sm text-gray-300">One car · two people sharing</p>
-                            <p className="text-sm leading-6 text-gray-400">
-                                {formatPrice(tour.pricing.deposit)} deposit · {formatPrice(tour.pricing.balance)} balance due {tour.pricing.balanceDueDays} days before departure
-                            </p>
+                            <p className="text-3xl font-black tracking-tight text-white">{formatPrice(tour.pricing.total)}</p>
+                            <p className="text-sm leading-6 text-gray-300">Based on one car · two people sharing accommodation</p>
+                            <div className="space-y-1 text-sm leading-6 text-gray-400">
+                                <p>{formatPrice(tour.pricing.deposit)} deposit at point of booking to secure your place on the tour.</p>
+                                <p>Final balance due no later than {tour.pricing.balanceDueDays} days before departure.</p>
+                            </div>
                         </div>
 
                         {/* CTA */}
-                        <div className="grid grid-cols-[0.85fr_1.15fr] gap-3 border-t border-gray-800/60 pt-4">
+                        <div className="grid grid-cols-[1.15fr_0.85fr] gap-3 border-t border-gray-800/60 pt-4">
+                            <Link
+                                to={tour.registerPath}
+                                className="inline-flex min-h-12 min-w-0 items-center justify-center bg-brandTeal px-3 py-3 text-center text-[0.65rem] font-black uppercase tracking-[0.1em] text-brandDark transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal sm:text-xs"
+                            >
+                                {tour.enquiryLabel}
+                            </Link>
                             <Link
                                 to={tour.path}
                                 aria-label={`Explore ${tour.title}`}
                                 className="inline-flex min-h-12 min-w-0 items-center justify-center border-2 border-brandTeal px-3 py-3 text-center text-[0.65rem] font-black tracking-[0.1em] text-brandTeal transition-colors hover:bg-brandTeal hover:text-brandDark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal sm:text-xs"
                             >
                                 EXPLORE THE TOUR
-                            </Link>
-                            <Link
-                                to={tour.registerPath}
-                                className="inline-flex min-h-12 min-w-0 items-center justify-center bg-brandTeal px-3 py-3 text-center text-[0.65rem] font-black uppercase tracking-[0.1em] text-brandDark transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal sm:text-xs"
-                            >
-                                {tour.enquiryLabel}
                             </Link>
                         </div>
 

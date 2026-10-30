@@ -72,24 +72,11 @@ function EnquiryForm({ tour }) {
             Car make and model
             <input className={fieldClass} type="text" name="Vehicle" placeholder="For example, Porsche 911 GT3" required />
           </label>
-
-          <label className={`block ${labelClass}`}>
-            Your ownership and driving experience
-            <span className="mt-3 block text-sm font-normal normal-case tracking-normal leading-6 text-gray-400">
-              Tell us how long you’ve owned your car, your experience driving it or similar performance cars, and any road trips, tours or driver training you’ve enjoyed.
-            </span>
-            <textarea className={`${fieldClass} min-h-36 resize-y`} name="Experience" required />
-          </label>
         </>
       )}
 
       <label className={`block ${labelClass}`}>
-        {tour ? 'Anything else you’d like us to know? (optional)' : 'How can we help?'}
-        {tour && (
-          <span className="mt-3 block text-sm font-normal normal-case tracking-normal leading-6 text-gray-400">
-            Questions or different circumstances? Let us know so we can consider them personally.
-          </span>
-        )}
+        {tour ? 'Any questions for us? (optional)' : 'How can we help?'}
         <textarea className={`${fieldClass} min-h-36 resize-y`} name="message" required={!tour} />
       </label>
 
@@ -110,7 +97,7 @@ function EnquiryForm({ tour }) {
         className="inline-flex min-h-12 w-full items-center justify-center gap-3 bg-brandTeal px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-brandDark transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal disabled:cursor-wait disabled:opacity-60 sm:w-auto"
       >
         <Send aria-hidden="true" className="h-4 w-4" />
-        {status === 'submitting' ? 'Sending…' : 'Send enquiry'}
+        {status === 'submitting' ? 'Sending…' : 'REQUEST BOOKING LINK'}
       </button>
 
       <div aria-live="polite" aria-atomic="true" className="min-h-8">
@@ -148,11 +135,11 @@ export default function ContactPage() {
                 {tour ? tour.title : 'Let’s talk'}
               </p>
               <h1 className="mt-5 max-w-xl break-words text-[clamp(2rem,8vw,3rem)] font-black uppercase leading-[0.95] tracking-[-0.045em] md:text-5xl xl:text-6xl">
-                {tour ? 'Your car. Your experience. Our shared adventure.' : 'Great experiences start with a conversation.'}
+                {tour ? 'Your car. Your experience. Our adventure.' : 'Great experiences start with a conversation.'}
               </h1>
               <p className="mt-8 max-w-lg text-base leading-8 text-gray-300">
                 {tour
-                  ? `${tour.shortTitle} is designed for owners who enjoy driving their performance cars and sharing the experience with like-minded people. We personally review each enquiry, considering the car, your driving experience and the group as a whole. If your circumstances are different, tell us a little more—we’re happy to have a conversation.`
+                  ? `${tour.shortTitle} is designed for owners who enjoy driving their performance cars and sharing the experience with like-minded people. We personally review each enquiry, considering the car, your driving experience and the group as a whole. If your circumstances are different, tell us a little more, we’re happy to have a conversation.`
                   : 'Have a question about our tours, a future event or a bespoke experience? Tell us what you have in mind. Our team will reply personally.'}
               </p>
 

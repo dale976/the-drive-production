@@ -21,7 +21,7 @@ test('contact variants collect relevant details and isolate form state', async (
   assert.match(source, /name="name"[^>]*required/);
   assert.match(source, /name="email"[^>]*required/);
   assert.match(source, /name="Vehicle"[^>]*required/);
-  assert.match(source, /name="Experience"[^>]*required/);
+  assert.doesNotMatch(source, /name="Experience"/);
   assert.match(source, /name="message"[^>]*required={!tour}/);
   assert.match(source, /name="Consent"/);
   assert.match(source, /<TourPrice tour={tour}/);

@@ -6,7 +6,6 @@ import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
 import PageMeta from '../components/PageMeta.jsx';
 import LifeOnTour from '../components/LifeOnTour.jsx';
-import { alpineGtTour } from '../data/tours.js';
 
 const organizationSchema = {
     '@context': 'https://schema.org',
@@ -85,10 +84,6 @@ export default function LandingPage({activePage = 'home'}) {
                         <Link to="/tours"
                            className="inline-flex min-h-12 items-center bg-brandTeal px-10 py-4 text-xs font-black uppercase tracking-[0.2em] text-brandDark shadow-[0_0_30px_rgba(0,168,150,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_50px_rgba(0,168,150,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal">
                             Explore Tours
-                        </Link>
-                        <Link to={alpineGtTour.registerPath}
-                           className="inline-flex min-h-12 items-center max-w-full justify-center text-center border border-white/30 bg-brandDark/60 px-8 py-4 text-xs font-black uppercase tracking-[0.18em] text-white backdrop-blur-sm transition-colors hover:border-brandTeal hover:text-brandTeal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandTeal">
-                            {alpineGtTour.enquiryLabel}
                         </Link>
                     </div>
 
